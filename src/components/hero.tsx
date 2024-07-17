@@ -14,7 +14,11 @@ function Hero() {
                     <div className="uppercase text-base font-medium text-[#9ab4b7] tracking-[2.24px]">Live your best life</div>
                     </div>
                     <h1 className="text-4xl font-semibold mb-6">We care about your health.</h1>
-                    <p className=" text-base leading-7 mb-[42px] md:max-w-xl">At Carefinder, we seek is to address the challenges associated with accessing healthcare in Nigeria by providing a user-friendly platform that helps users locate, export, and share information about hospitals in their region.</p>
+                    <p className=" text-base leading-7 mb-[42px] md:max-w-xl">At Carefinder, we seek is to address the challenges 
+                        associated with accessing healthcare in Nigeria by providing 
+                        a user-friendly platform that helps users locate, 
+                        export, and share information about hospitals in their region.
+                        Findling the nearest care has never been easier.</p>
                     <button className='btn px-8 py-4 text-xl font-semibold text-gray-600 border rounded-full bg-manthis-green bg-opacity-40 mx-auto xl:mx-0'>Get Started</button>
                 </div>
                 <div className="hero-banner hidden xl:flex max-w-[814px] self-end">
@@ -25,7 +29,7 @@ function Hero() {
     </section>
 
 {/* Statistics section */}
-<section className='services-section mt-8'>
+<section className='services-section mt-8 mb-8'>
 <div className='container mx-auto '>
 <div className=" flex flex-col xl:flex-row gap-y-6 justify-between">
  <div className='flex-1 flex flex-col items-center'>
