@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import { RxHamburgerMenu } from "react-icons/rx";
 
+
 function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -26,7 +27,7 @@ function NavBar() {
                 <div className={`flex flex-col gap-y-4 lg:flex-row lg:gap-x-10 lg:gap-y-0 items-center ${isOpen ? 'block' : 'hidden'} lg:block`}>
                     <a href="#" className='text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4'>Home</a>
                     <a href="#" className='text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4'>About</a>
-                    <a href="#" className='text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4'>Services</a>
+                    <a to="#" className='text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4'>Services</a>
                     <a href="#" className='text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4'>Blog</a>
                     <a href="#" className='text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg-mx-4'>Contact Us</a>
                     <a href="#" className='mx-2- lg:mx-4'>

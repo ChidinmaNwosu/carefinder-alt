@@ -29,11 +29,11 @@ function Hero() {
     </section>
 
 {/* Statistics section */}
-<section className='services-section mt-8 mb-8'>
+<section className='services-section mt-10'>
 <div className='container mx-auto '>
 <div className=" flex flex-col xl:flex-row gap-y-6 justify-between">
  <div className='flex-1 flex flex-col items-center'>
-        <div className="text-4xl xl:text-[64px] font-semibold text-bice-blue text-opacity-50 xl:mb-4">+500</div>
+        <div className="text-4xl xl:text-[64px] font-semibold text-bice-blue text-opacity-50 xl:mb-4 text-">+500</div>
         <div className=" text-base font-medium text-gray-400 ">Happy patients</div>
     </div>
     <div className='flex-1 flex flex-col items-center'>
@@ -51,6 +51,8 @@ function Hero() {
     </div>
 </div>
 </section>
+
+
 </>
   )
 }

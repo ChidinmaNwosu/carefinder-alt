@@ -1,8 +1,10 @@
 import React from 'react'
+import { IoIosArrowDown } from "react-icons/io";
 
 function Services() {
   return (
-    <section className='services-section'>
+    <>
+    <section className='services-section mb-20'>
         <div className="bg-bice-blue bg-opacity-30 bg-cover bg-no-repeat max-w-[1466px] mx-4 xl:mx-auto rounded-[20px] xl:pt-[70px] px-6 xl:px-0 relative h-[368px] flex items-center xl:items-start -z-10">
           <div className="container mx-auto">
             <div className="flex flex-col items-center xl:flex-row xl:mb-[60px]">
@@ -15,8 +17,8 @@ function Services() {
           </div>
         </div>
 
-        <div className="container mx-auto mt-8 xl:-mt-[144px] bg-manthis-green bg-opacity-35">
-          <div className="grid xl:grid-cols-4 gap-5 px-8 xl:px-0">
+        <div className="container mx-auto mt-8 xl:-mt-[144px]">
+          <div className="grid xl:grid-cols-4 gap-5 px-8 xl:px-0 ">
 
             <div className="service-item bg-white p-[30px] rounded-[10px] shadow-2xl min-h-[288px] flex flex-col items-center text-center">
               <div className="grid-item-icon mb-[15px]">
@@ -55,8 +57,59 @@ function Services() {
               </div>
             </div>
           </div>
-        
     </section>
+
+    {/*Appointments*/}
+    <section className="appointment-section p-4">
+      <div className="container mx-auto">
+        <h2 className="text-3xl mb-5 xl:mb-[50px] text-center xl:text-left font-semibold">Book an Appointment or Call: <span className="text-bice-blue opacity-45">(+234)909 411 5467</span></h2>
+
+        {/*form*/}
+       <form className="flex flex-col gap-y-5 border shadow-2xl p-10">
+        {/*select wrapper */}
+        <div className="flex flex-col xl:flex-row gap-5">
+          <div className="relative items-center border bg-white select-text flex-1 rounded-lg">
+            {/*select 1 */}
+            <select className=" outline-none h-full w-full bg-transparent p-4">
+              <option value="1">Select Service</option>
+              <option value="2">Service 1</option>
+              <option value="3">Service 2</option>
+              <option value="4">Service 3</option>
+              <option value="5">Service 4</option>
+            </select>
+          </div>
+
+          {/*select 2*/}
+          <div className="relative items-center border bg-white select-auto flex-1 rounded-lg">
+            <select className="outline-none h-full w-full bg-transparent p-4">
+              <option value="1">Select Day</option>
+              <option value="2">Monday</option>
+              <option value="3">Tuesday</option>
+              <option value="4">Wednesday</option>
+              <option value="5">Thursday</option>
+              <option value="5">Friday</option>
+              <option value="5">Saturday</option>
+              <option value="5">Sunday</option>
+            </select>
+          </div>
+     </div>
+     <div className="flex flex-col xl:flex-row gap-5">
+           <input type="text" className="input flex-1 p-3 border rounded-lg outline-none" placeholder="Full Name" />
+           <input type="tel" className="input flex-1 p-3 border rounded-lg outline-none" placeholder="Phone Number" />
+      </div>
+     <div className="flex flex-col xl:flex-row gap-5">
+           <input type="date" className="input flex-1 p-3 border rounded-lg outline-none"/>
+           <input type="time" className="input flex-1 p-3 border rounded-lg outline-none" />
+      </div>
+
+      {/*submit button*/}
+      <button type="submit" className="border rounded-full bg-manthis-green bg-opacity-55 self-start xl:self-center p-8 text-xl font-semibold text-white mt-10">BOOK AN APPOINTMENT</button>
+     
+       </form>
+      </div>
+    </section>
+
+</>
   )
 }
 
