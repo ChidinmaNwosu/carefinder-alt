@@ -6,7 +6,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
 
-  return (
+ return (
     <div>
         <header className='py-8 lg:pt-6 lg:pb-6  bg-manthis-green bg-opacity-50'>
             <div className='container mx-auto lg:relative flex flex-col lg:flex-row lg:justify-between gap-y-4 lg:gap-y-0'>
