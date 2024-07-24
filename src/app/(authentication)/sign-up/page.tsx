@@ -1,10 +1,40 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { useRouter } from 'next/navigation';
+import {auth} from '@/app/firebase';
+import { createUserWithEmailAndPassword, GoogleAuthProvider,signInWithPopup } from 'firebase/auth';
 
-const SignUp = () => {
+const SignUp:React.FC = () => {
   const router = useRouter();
+  const [name,setName]= useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  
+
+  const handleSignUp=async()=>{
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      router.push ('/about')
+    }
+    catch (error) {
+      setError(`Could not sign up: ${error}`);
+    }
+  }
+
+  const handleGoogleSignIn = async () => {
+    try{
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
+      router.push('/about')
+    }
+    catch (error) {
+      setError(`Could not sign in with Google: ${error}`);
+    }
+
+  }
+
   
   return (
     <div className="flex items-center justify-center min-h-screen  bg-bice-blue bg-opacity-40">
@@ -14,15 +44,15 @@ const SignUp = () => {
             <span className="font-light font-gray-400 mb-8 text-sm md:text-base lg:test-lg text-manthis-green">Put in your details to join us!</span>
             <div className="py-2 md:py-4 ">
               <label className="text-lg mb:text-xl mb-2 text-bice-blue">Name</label>
-              <input type="text" className="w-full p-2 border border-manthis-green rounded-md placeholder:font-light placeholder:text-mathis-green" name="name" id="name" placeholder="Jane Doe" />
+              <input onChange={(e)=>setName(e.target.value)} type="text" className="w-full p-2 border border-manthis-green rounded-md placeholder:font-light placeholder:text-mathis-green" name="name" id="name" value={name} placeholder="Jane Doe" />
            </div>
             <div className="py-2 md:py-4 ">
               <label className="text-lg mb:text-xl mb-2 text-bice-blue">Email</label>
-              <input type="text" className="w-full p-2 border border-manthis-green rounded-md placeholder:font-light placeholder:text-mathis-green" name="email" id="email" placeholder="JaneDoe@email.com" />
+              <input onChange={(e)=>setEmail(e.target.value)} type="text" className="w-full p-2 border border-manthis-green rounded-md placeholder:font-light placeholder:text-mathis-green" name="email" id="email" value={email} placeholder="JaneDoe@email.com" />
            </div>
             <div className=" py-2 md:py-4 ">
               <label className="text-lg md:text-xl mb-2 text-bice-blue">Password</label>
-              <input type="password" className="w-full p-2 border border-manthis-green rounded-md placeholder:font-light placeholder:text-mathis-green" name="password" id="password" placeholder="JaneDoe123$" />
+              <input onChange={(e)=>setPassword(e.target.value)} type="password" className="w-full p-2 border border-manthis-green rounded-md placeholder:font-light placeholder:text-mathis-green" name="password" id="password" value={password} placeholder="JaneDoe123$" />
            </div>
            <div className="flex flex-col md:flex-row gap-2 justify-between w-full py-4">
                <div className="mr-24 ">
@@ -31,10 +61,10 @@ const SignUp = () => {
                     Remember for 30 days
                   </span>
                </div>
-        
+            <p className=''>{error}</p>
            </div>
-           <button className="w-full bg-bice-blue text-white p-3 rounded-lg mb-6 hover:bg-white hover:text-bice-blue hover:border hover:border-manthis-green font-semibold">Sign Up</button>
-           <button className="w-full border border-gray-400 text-bice-blue text-base p-2 rounded-lg mb-6 hover:bg-bice-blue hover:text-white font-semibold"><FcGoogle className=" w-6 h-6 inline mr-2" />Sign Up with Google</button>
+           <button onClick={handleSignUp} className="w-full bg-bice-blue text-white p-3 rounded-lg mb-6 hover:bg-white hover:text-bice-blue hover:border hover:border-manthis-green font-semibold">Sign Up</button>
+           <button onClick={handleGoogleSignIn} className="w-full border border-gray-400 text-bice-blue text-base p-2 rounded-lg mb-6 hover:bg-bice-blue hover:text-white font-semibold"><FcGoogle className=" w-6 h-6 inline mr-2" />Sign Up with Google</button>
            <div className="text-center text-bice-blue">
              Already have an account? {''}
               <span onClick={()=>router.push('/sign-in')} className="font-bold text-bice-blue cursor-pointer" >

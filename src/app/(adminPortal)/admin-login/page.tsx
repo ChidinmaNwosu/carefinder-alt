@@ -12,11 +12,7 @@ const AdminPortal = () => {
         <div className="flex flex-col justify-center p-4 md:p-8 lg:p-14">
           <span className="mb-1 lg:mb-3 text-2xl md:text-3xl lg:text-4xl font-bold text-bice-blue"> Welcome, Admin!</span>
             <span className="font-light font-gray-400 mb-8 text-sm md:text-base lg:test-lg text-manthis-green">Welcome back! Please enter your details.</span>
-            <div className="py-2 md:py-4 ">
-              <label className="text-lg mb:text-xl mb-2 text-bice-blue">Username</label>
-              <input type="text" className="w-full p-2 border border-manthis-green rounded-md placeholder:font-light placeholder:text-mathis-green" name="uname" id="uname" placeholder="JaneDoe123" />
-           </div>
-            <div className="py-2 md:py-4 ">
+           <div className="py-2 md:py-4 ">
               <label className="text-lg mb:text-xl mb-2 text-bice-blue">Email</label>
               <input type="text" className="w-full p-2 border border-manthis-green rounded-md placeholder:font-light placeholder:text-mathis-green" name="email" id="email" placeholder="JaneDoe@email.com" />
            </div>
