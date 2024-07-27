@@ -61,7 +61,7 @@ const SignUp:React.FC = () => {
                     Remember for 30 days
                   </span>
                </div>
-            <p className=''>{error}</p>
+               <span className="text-base text-manthis-green">Forgot Password?</span>
            </div>
            <button onClick={handleSignUp} className="w-full bg-bice-blue text-white p-3 rounded-lg mb-6 hover:bg-white hover:text-bice-blue hover:border hover:border-manthis-green font-semibold">Sign Up</button>
            <button onClick={handleGoogleSignIn} className="w-full border border-gray-400 text-bice-blue text-base p-2 rounded-lg mb-6 hover:bg-bice-blue hover:text-white font-semibold"><FcGoogle className=" w-6 h-6 inline mr-2" />Sign Up with Google</button>

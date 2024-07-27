@@ -29,10 +29,10 @@ function About() {
 
   return (
     <div className="p-4 min-h-screen">
-      <h1 className="text-4xl font-bold mb-4 ml-2">Carefinder</h1>
-      <p className="mb-8 ml-3">
+      <h1 className="md:text-4xl text-3xl font-bold mb-4 ml-2">Carefinder</h1>
+      <p className="mb-8 ml-3 text-xl">
         Find the best hospitals near you! Search and filter through a
-        comprehensive list of hospitals.
+        comprehensive list of hospitals using the hospital name or location.
       </p>
 
       <form className="md:w-[700px] w-[300px] pr-2 mb-4 relative">
