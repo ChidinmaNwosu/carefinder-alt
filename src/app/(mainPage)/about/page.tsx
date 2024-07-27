@@ -3,9 +3,10 @@ import React, { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 import { Hospital } from "./interface";
+// import {Link} from 'react-router-dom';
 
 function About() {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const [hospitals, setHospitals] = useState<Hospital[]>([]);
 
   useEffect(() => {
@@ -61,10 +62,10 @@ function About() {
               className="p-4 bg-manthis-green bg-opacity-40 text-white rounded-xl"
             >
               <h2 className="text-xl font-bold">{hospital?.name}</h2>
-              {/* <p>Location: {hospital?.location}</p> */}
               <p>State:{hospital?.state?.name}</p>
               <p>Address: {hospital?.address}</p>
               <p>Phone number: {hospital?.phone_number}</p>
+              <p> Email: {hospital?.name}@gmail.com</p>
             </div>
           ))}
       </div>
