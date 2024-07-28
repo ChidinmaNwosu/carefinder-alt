@@ -9,7 +9,9 @@ function AdminDashboard() {
                 <p className="font-medium text-xl">Welcome to the admin dashboard!</p>
             </div>
             {/* Add your admin dashboard components here */}
-
+              <div className="className">
+                
+              </div>
         </div>
     </div>
   )

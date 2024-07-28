@@ -3,11 +3,14 @@ import React, { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 import { Hospital } from "./interface";
-// import {Link} from 'react-router-dom';
+import { Pagination } from 'antd';
 
 function About() {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [hospitals, setHospitals] = useState<Hospital[]>([]);
+
+
+  
 
   useEffect(() => {
     // Fetch hospitals based on selected location
@@ -69,6 +72,8 @@ function About() {
             </div>
           ))}
       </div>
+
+    
     </div>
   );
 }
