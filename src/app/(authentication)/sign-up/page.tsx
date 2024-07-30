@@ -16,7 +16,7 @@ const SignUp:React.FC = () => {
   const handleSignUp=async()=>{
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      router.push ('/about')
+      router.push ('/hospitals')
     }
     catch (error) {
       setError(`Could not sign up: ${error}`);
@@ -27,7 +27,7 @@ const SignUp:React.FC = () => {
     try{
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
-      router.push('/about')
+      router.push('/hospitals')
     }
     catch (error) {
       setError(`Could not sign in with Google: ${error}`);

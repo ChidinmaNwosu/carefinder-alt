@@ -15,7 +15,7 @@ const SignIn = () => {
     try{
       const provider = new GoogleAuthProvider();
        await signInWithPopup(auth, provider);
-       router.push('/about');
+       router.push('/hospitals');
     }
     catch(error){
       setError(`Could not sign in with Google: ${error}`);
@@ -25,7 +25,7 @@ const SignIn = () => {
   const handleSignIn =async()=>{
     try{
       await signInWithEmailAndPassword(auth, email, password);
-      router.push('/about');
+      router.push('/hospitals');
     }
     catch(error){
       setError(`Could not sign in: ${error}`);
