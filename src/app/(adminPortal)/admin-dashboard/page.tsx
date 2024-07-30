@@ -1,6 +1,6 @@
 import React from 'react'
 
-function AdminDashboard() {
+function AdminDashboard():React.JSX.Element {
   return (
     <div>
         <div className="caontainer mx-auto">

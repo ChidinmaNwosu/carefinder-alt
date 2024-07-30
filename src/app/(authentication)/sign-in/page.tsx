@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { signInWithEmailAndPassword,GoogleAuthProvider,signInWithPopup} from 'firebase/auth';
 import {auth} from '@/app/firebase';
 
-const SignIn = () => {
+function SignIn():React.JSX.Element{
   const router = useRouter();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');

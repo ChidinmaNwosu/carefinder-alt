@@ -5,7 +5,7 @@ import axios from "axios";
 import { Hospital } from "./interface";
 import Papa from "papaparse";
 
-function Hospitals() {
+function Hospitals():React.JSX.Element {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [hospitals, setHospitals] = useState<Hospital[]>([]);
 
@@ -50,20 +50,22 @@ axios
             };
 
 
-//Allows us to export our list of hospitals to a CSV file 
+//Allows us to export our list of hospitals to a CSV file, after filtering it based on location 
   const exportToCSV = () => {
     const filteredHospitals = hospitals.filter(hospital =>
       hospital.name.toLowerCase().includes(searchQuery.toLowerCase())
     ); 
       
-    const csvData = filteredHospitals.map(hospital => ({ // Transforming the data to CSV format based on the location
+// Transforming the data to CSV format based on the location
+    const csvData = filteredHospitals.map(hospital => ({ 
     Name: hospital?.name,
     State: hospital?.state?.name,
     Address: hospital?.address,
     PhoneNumber: hospital?.phone_number,
-    Email: `${hospital?.name}@gmail.com`,
+    Email:`${hospital?.name}@gmail.com`,
    }));
 
+// Using PapaParse to convert the data
    const csv = Papa.unparse(csvData);
    const blob = new Blob ([csv], {type: "text/csv;charset=utf-8;"});
    const link = document.createElement("a");
