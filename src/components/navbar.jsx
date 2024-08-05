@@ -1,10 +1,17 @@
-"use client"
+'use client'
 import React, {useState} from 'react';
+import {useRouter} from 'next/navigation';
 import { RxHamburgerMenu } from "react-icons/rx";
 
 
 function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
+
+    const router = useRouter();
+
+    const handleClick = () =>{
+        router.push('/admin-login');
+    }
 
  return (
     <div>
@@ -26,12 +33,12 @@ function NavBar() {
                 {/* Navigation Links */}
                 <div className={`flex flex-col gap-y-4 lg:flex-row lg:gap-x-10 lg:gap-y-0 items-center ${isOpen ? 'block' : 'hidden'} lg:block`}>
                     <a href="#" className='text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4'>Home</a>
-                    <a href="#" className='text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4'>About</a>
-                    <a to="#" className='text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4'>Services</a>
-                    <a href="#" className='text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4'>Blog</a>
-                    <a href="#" className='text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg-mx-4'>Contact Us</a>
+                    <a href="#about" className='text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4'>About</a>
+                    <a href="#services" className='text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4'>Services</a>
+                    <a href="#blog" className='text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4'>Blog</a>
+                    <a href="#contact" className='text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg-mx-4'>Contact Us</a>
                     <a href="#" className='mx-2- lg:mx-4'>
-                    <button className='p-3 text-bice-blue bg-white bg-opacity-30 hover:text-manthis-green rounded-lg text-2xl font-semibold border-2 border-white '>Admin Portal</button>
+                    <button onClick={handleClick} className='p-3 text-bice-blue bg-white bg-opacity-30 hover:text-manthis-green rounded-lg text-2xl font-semibold border-2 border-white '>Admin Portal</button>
                     </a>
                 </div>
             </div>

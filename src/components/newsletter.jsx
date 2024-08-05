@@ -1,7 +1,7 @@
 
 function Newsletter() {
   return (
-    <section className="p-4 mt-20 bg-bice-blue bg-opacity-25 md:h-[444px] py-12 flex items-center relative overflow-hidden">
+    <section className="p-4 mt-20 bg-bice-blue bg-opacity-25 md:h-[444px] py-12 flex items-center relative overflow-hidden" id="newsletter">
         <div className="absolute left-0 bottom-0">
             <img src="/pattern-bg.png" alt="pattern for newsletter" />
         </div>

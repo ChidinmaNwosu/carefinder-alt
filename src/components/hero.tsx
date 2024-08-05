@@ -1,10 +1,20 @@
-import React from 'react'
+'use client'
+import React from 'react';
 import { FaHeartbeat } from "react-icons/fa";
+import { useRouter } from 'next/navigation';
+import CountUp from 'react-countup';
 
-function Hero() {
+
+function Hero():React.ReactElement {
+    const router = useRouter();
+    
+    const handleClick = () => {
+        router.push('/sign-up');
+    }
+
   return (
     <>
-    <section className='Hero-section bg-gray-200 py-12 xl:pt-12 xl:pb-0 overflow-hidden' >
+    <section className="Hero-section bg-gray-200 py-12 xl:pt-12 xl:pb-0 overflow-hidden" id="home">
         <div className="container mx-auto h-full">
             <div className="flex flex-col xl:flex-row items-center justify-between h-full">
 
@@ -19,7 +29,7 @@ function Hero() {
                         a user-friendly platform that helps users locate, 
                         export, and share information about hospitals in their region.
                         Findling the nearest care has never been easier.</p>
-                    <button className='btn px-8 py-4 text-xl font-semibold text-gray-600 border rounded-full bg-manthis-green bg-opacity-40 mx-auto xl:mx-0'>Get Started</button>
+                    <button onClick={handleClick} className='btn px-8 py-4 text-xl font-semibold text-gray-600 border rounded-full bg-manthis-green bg-opacity-40 mx-auto xl:mx-0'>Get Started</button>
                 </div>
                 <div className="hero-banner hidden xl:flex max-w-[814px] self-end">
                     <img src="/hero-banner.png" alt="hero-banner" />
@@ -33,19 +43,26 @@ function Hero() {
 <div className='container mx-auto '>
 <div className=" flex flex-col xl:flex-row gap-y-6 justify-between">
  <div className='flex-1 flex flex-col items-center'>
-        <div className="text-4xl xl:text-[64px] font-semibold text-bice-blue text-opacity-50 xl:mb-4 text-">+500</div>
+        <div className="text-4xl xl:text-[64px] font-semibold text-bice-blue text-opacity-50 xl:mb-4 text-">
+           <CountUp end={500} duration={2} prefix="+"/></div> 
         <div className=" text-base font-medium text-gray-400 ">Happy patients</div>
     </div>
     <div className='flex-1 flex flex-col items-center'>
-        <div className="text-4xl xl:text-[64px] font-semibold text-bice-blue text-opacity-50 xl:mb-4">10</div>
+        <div className="text-4xl xl:text-[64px] font-semibold text-bice-blue text-opacity-50 xl:mb-4">
+        <CountUp end={10} duration={2}/></div>
         <div className=" text-base font-medium text-gray-400">Total Branches</div>
     </div>
     <div className='flex-1 flex flex-col items-center'>
-        <div className="text-4xl xl:text-[64px] font-semibold text-bice-blue text-opacity-50 xl:mb-4">+20</div>
+        <div className="text-4xl xl:text-[64px] font-semibold text-bice-blue text-opacity-50 xl:mb-4">
+         <CountUp end={20} duration={2} prefix="+"/> 
+        </div>
         <div className=" text-base font-medium text-gray-400">Senior Doctors</div>
     </div>
     <div className='flex-1 flex flex-col items-center'>
-        <div className="text-4xl xl:text-[64px] font-semibold text-bice-blue text-opacity-50 xl:mb-4">2</div>
+        <div className="text-4xl xl:text-[64px] font-semibold text-bice-blue text-opacity-50 xl:mb-4">
+        <CountUp end={2} duration={2}/> 
+        
+        </div>
         <div className=" text-base font-medium text-gray-400">Years Experience</div>
     </div>  
     </div>

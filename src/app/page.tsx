@@ -3,10 +3,9 @@ import Hero from '@/components/hero';
 import Services from '@/components/services';
 import About from '@/components/about';
 import Footer from '@/components/footer';
-import Faq from '@/components/faq';
 import Blog from '@/components/blog';
-import Newsletter from '@/components/newsletter';
-
+import HashElement from '@/hashElement/hashElement';
+import Contact from '@/components/contact';
 
 export default function Home() {
   return (
@@ -15,10 +14,10 @@ export default function Home() {
     <Hero/>
     <About/>
     <Services/>
-    <Faq/>
+    <Contact/>
     <Blog/>
-    <Newsletter/>
     <Footer/>
+    <HashElement/>
    </div>
   );
 }

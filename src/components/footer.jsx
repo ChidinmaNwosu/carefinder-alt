@@ -9,7 +9,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="bg-slate-200">
+    <footer className="bg-slate-200" id="footer">
       < div className ="container mx-auto p-8">
         <div className="flex flex-col xl:flex-row gap-x-5 gap-y-10">
           <div className="flex-1">

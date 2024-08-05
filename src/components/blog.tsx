@@ -1,8 +1,9 @@
 import React from 'react'
+import Newsletter from '@/components/newsletter';
 
 function Blog() {
   return (
-    <section className="className mt-28">
+    <section className="className mt-28" id="blog">
         <div className="container mx-auto">
             <h2 className="text-3xl mb-[50px] text-bice-blue text-center xl:text-left font-semibold">Our Recent Posts</h2>
             {/*Blog posts */}
@@ -83,6 +84,7 @@ function Blog() {
 
             </div>
         </div>
+        <Newsletter/>
     </section>
   )
 }

@@ -1,9 +1,18 @@
-import React from 'react'
+'use client'
+import React from 'react';
+import { useRouter } from 'next/navigation';
 import { IoIosSettings } from "react-icons/io";
 
 function About() {
+
+    const router = useRouter();
+    
+    const handleClick = () => {
+        router.push('/sign-up');
+    }
+
   return (
-   <section className="mt-2">
+   <section className="mt-2" id="about">
     <div className="bg-gray-300">
        <div className="container mx-auto">
         <div className="px-4 my-28 pt-8 xl:pt-10 pb-24">
@@ -61,7 +70,7 @@ function About() {
 
              
            </div>
-            <button className='btn px-8 py-6 text-xl font-semibold text-gray-600 border rounded-full bg-manthis-green bg-opacity-40 mx-auto xl:mx-0'>Get Started</button>
+            <button onClick={handleClick} className='btn px-8 py-6 text-xl font-semibold text-gray-600 border rounded-full bg-manthis-green bg-opacity-40 mx-auto xl:mx-0'>Get Started</button>
         </div>
 
         </div>

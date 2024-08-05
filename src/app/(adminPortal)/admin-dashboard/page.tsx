@@ -1,14 +1,15 @@
 'use client'
 import React, {useEffect} from 'react'
-import Editor from '@toast-ui/editor';
+// import Editor from '@toast-ui/editor';
 import '@toast-ui/editor/dist/toastui-editor.css';
 
 
 function AdminDashboard():React.JSX.Element {
   //Initialize the Editor.js instance with the provided element ID
   useEffect (()=>{
+   const Editor = require('@toast-ui/editor');
     
-    const editor = new Editor({
+    const editor =new Editor({
       el: document.querySelector('#editor'),
       height: '500px',
       width: '500px',
@@ -34,7 +35,9 @@ function AdminDashboard():React.JSX.Element {
             </div>
             {/* Add your admin dashboard components here */}
            
-              <div className="className" id="editor"></div>
+              <div className="className" id="editor">
+            
+              </div>
         </div>
     </div>
   )

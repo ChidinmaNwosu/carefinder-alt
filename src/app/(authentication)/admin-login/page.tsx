@@ -5,7 +5,10 @@ import { useRouter } from 'next/navigation';
 
 const Admin = () => {
   const router = useRouter();
-  
+
+  const handleClick = ( ) =>{
+    router.push('/admin-dashboard');
+  }  
   return (
     <div className="flex items-center justify-center min-h-screen bg-bice-blue bg-opacity-40">
       <div className="relative lg:w-[65%] flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md-flex-row md:sapce-y-0 md:space:x-4 lg:space-x-8">
@@ -31,8 +34,14 @@ const Admin = () => {
            </div>
            <button className="w-full bg-manthis-green text-white p-3 rounded-lg mb-6 hover:bg-white hover:text-manthis-green hover:border hover:border-bice-blue font-semibold">Log In</button>
            <button className="w-full border border-gray-400 text-manthis-green text-base p-2 rounded-lg mb-6 hover:bg-manthis-green hover:text-white font-semibold"><FcGoogle className=" w-6 h-6 inline mr-2" />Login In with Google</button>
-           
+           <div className="text-center text-bice-blue">
+             Done! Proceed to the {''}
+              <span onClick={handleClick} className="font-bold text-bice-blue cursor-pointer" >
+                Admin Dashboard
+              </span>
+           </div>
         </div>
+        
       </div>
 
     </div>
