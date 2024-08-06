@@ -11,7 +11,7 @@ function SignIn():React.JSX.Element{
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
   
-  const handleGoogleSignIn =async()=>{
+  const handleGoogleSignIn =async():Promise<void>=>{
     try{
       const provider = new GoogleAuthProvider();
        await signInWithPopup(auth, provider);
@@ -22,7 +22,7 @@ function SignIn():React.JSX.Element{
     }
   }
 
-  const handleSignIn =async()=>{
+  const handleSignIn =async():Promise<void>=>{
     try{
       await signInWithEmailAndPassword(auth, email, password);
       router.push('/hospitals');

@@ -26,7 +26,7 @@ function About(): React.JSX.Element {
                   <h2 className="text-3xl font-semibold text-bice-blue ">
                     Get Started
                   </h2>
-                  <p className="text-gray-700 text-base">
+                  <p className="text-gray-800 text-base">
                     Click the &apos;Get Started&apos; button to find healthcare
                     centers around you.
                   </p>
@@ -39,7 +39,7 @@ function About(): React.JSX.Element {
                   <h2 className="text-3xl font-semibold text-bice-blue">
                     Search
                   </h2>
-                  <p className="text-gray-700 text-base">
+                  <p className="text-gray-800 text-base">
                     Search for preferred hospital name and address near your
                     location or select from a list of nearby hospitals.
                   </p>
@@ -52,7 +52,7 @@ function About(): React.JSX.Element {
                   <h2 className="text-3xl font-semibold text-bice-blue">
                     Select
                   </h2>
-                  <p className="text-gray-700 text-base">
+                  <p className="text-gray-800 text-base">
                     Click on the marker on the map to view more information
                     about your selected hospital.
                   </p>
@@ -65,7 +65,7 @@ function About(): React.JSX.Element {
                   <h2 className="text-3xl font-semibold text-bice-blue">
                     Share
                   </h2>
-                  <p className="text-gray-700 text-base">
+                  <p className="text-gray-800 text-base">
                     Carefinder allows users share list of hospitals with others.
                     Users can generate a shareable link or download the CSV file
                     directly from the device.{" "}
@@ -79,7 +79,7 @@ function About(): React.JSX.Element {
                   <h2 className="text-3xl font-semibold text-bice-blue">
                     Sign Up
                   </h2>
-                  <p className="text-gray-700">
+                  <p className="text-gray-800">
                     Carefinder requires users to create an account to access the
                     platform&apos;s wonderful features.
                   </p>
@@ -92,7 +92,7 @@ function About(): React.JSX.Element {
                   <h2 className="text-3xl font-semibold text-bice-blue">
                     Markdown Support
                   </h2>
-                  <p className="text-gray-700">
+                  <p className="text-gray-800">
                     Carefinder allows admin users to write content using
                     markdown.
                   </p>
