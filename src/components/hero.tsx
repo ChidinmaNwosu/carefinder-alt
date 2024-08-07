@@ -11,7 +11,7 @@ function Hero(): React.ReactElement {
   };
 
   return (
-    <section className="bg-gray-200 py-12 xl:pt-12 xl:pb-0 overflow-hidden">
+    <section className="py-12 xl:pt-12 xl:pb-0 overflow-hidden">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between h-full">
           <div className="hero-text xl:w-[48%] text-center xl:text-left">

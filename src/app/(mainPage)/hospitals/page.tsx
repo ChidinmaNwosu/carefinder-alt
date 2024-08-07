@@ -17,10 +17,10 @@ function Hospitals(): React.JSX.Element {
     // Fetch hospitals from our endpoint
     axios
       .get(
-        "https://getreliancehealth.com//wp-content/themes/getreliancehealthWPTheme/assets/cache/providers.json"
+        "/api/hospital"
       )
       .then((response) => {
-        setHospitals(response?.data?.data);
+        setHospitals(response?.data?.hospital);
         console.log("data", response?.data);
       })
       .catch((error) => {
@@ -114,8 +114,8 @@ function Hospitals(): React.JSX.Element {
 
   return (
     <div className="p-4 min-h-screen">
-      <h1 className="md:text-4xl text-3xl font-bold mb-4 ml-2">Carefinder</h1>
-      <p className="mb-8 ml-3 text-xl">
+      <h1 className="md:text-4xl text-3xl font-bold mb-4 ml-2 text-gray-700">Carefinder</h1>
+      <p className="mb-8 ml-3 text-xl text-gray-800">
         Find the best hospitals near you! Search and filter through a
         comprehensive list of hospitals using the hospital name or location.
       </p>
@@ -136,7 +136,7 @@ function Hospitals(): React.JSX.Element {
         {/* <div className="absolute top-20 p-4 bg-bice-blue bg-white text-bice-blue w-full rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2 "></div> */}
       </form>
 
-      <div className=" lg:grid lg:grid-cols-4 lg:grid-rows-2 lg:gap-8 mx-4 my-6 space-y-8 lg:space-y-0 ">
+      <div className=" lg:grid lg:grid-cols-4 lg:gap-8 mx-4 my-6 space-y-8 lg:space-y-0">
         {currentHospitals
           ?.filter((hospital) =>
             hospital.name.toLowerCase().includes(searchQuery.toLowerCase())

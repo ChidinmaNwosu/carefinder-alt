@@ -19,7 +19,7 @@ function SignUp(): React.JSX.Element {
   const handleSignUp = async ():Promise<void> => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      router.push("/hospitals");
+      router.push("/sign-in");
     } catch (error) {
       setError(`Could not sign up: ${error}`);
     }
@@ -28,10 +28,10 @@ function SignUp(): React.JSX.Element {
   const handleGoogleSignIn = async ():Promise<void> => {
     try {
       const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
-      router.push("/hospitals");
+      await signInWithPopup(auth,provider);
+      router.push("/sign-in");
     } catch (error) {
-      setError(`Could not sign in with Google: ${error}`);
+      setError(`Could not sign in with Google:${error}`);
     }
   };
 
