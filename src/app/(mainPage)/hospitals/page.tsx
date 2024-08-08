@@ -147,17 +147,17 @@ function Hospitals(): React.JSX.Element {
               className="p-4 bg-manthis-green bg-opacity-40 text-white rounded-xl"
             >
               <h2 className="text-2xl font-bold mb-4">{hospital?.name}</h2>
-              <p className="mb-2 text-bice-blue font-medium tracking-tight text-xl">
-                Type: {hospital?.type?.name}
+              <p className="mb-2 text-bice-blue font-bold tracking-tight text-xl">
+                Type: <span className="mb-2 ml-1 text-bice-blue font-medium tracking-tight text-xl">{hospital?.type?.name}</span>
               </p>
-              <p className="mb-2 text-bice-blue font-medium tracking-tight text-xl">
-                State: {hospital?.state?.name}
+              <p className="mb-2 text-bice-blue font-bold tracking-tight text-xl">
+                State: <span className="mb-2 ml-1 text-bice-blue font-medium tracking-tight text-xl"> {hospital?.state?.name} </span>
               </p>
-              <p className="mb-2 text-bice-blue font-medium tracking-tight text-xl">
-                Address: {hospital?.address}
+              <p className="mb-2 text-bice-blue font-bold tracking-tight text-xl">
+                Address: <span className="mb-2 ml-1 text-bice-blue font-medium tracking-tight text-xl">{hospital?.address}</span>
               </p>
-              <p className="mb-2 text-bice-blue font-medium tracking-tight text-xl">
-                Phone number: {hospital?.phone_number}
+              <p className="mb-2 text-bice-blue font-bold tracking-tight text-xl">
+                Phone number: <span className="mb-2 ml-1 text-bice-blue font-medium tracking-tight text-xl"> {hospital?.phone_number} </span>
               </p>
               {/* <p className="mb-2 text-bice-blue font-medium tracking-tight text-xl">Email: {hospital?.name}@gmail.com</p> */}
             </div>

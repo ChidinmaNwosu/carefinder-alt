@@ -1,19 +1,38 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 function NavBar(): React.JSX.Element {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
   const router = useRouter();
-
+  
   const handleClick = (): void => {
     router.push("/admin-login");
   };
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 134) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [])
+
+
+
   return (
-    <section className="py-8 lg:pt-6 lg:pb-6 bg-manthis-green bg-opacity-50">
+    <section className={`fixed top-0 w-screen py-8 lg:pt-6 lg:pb-6 bg-manthis-green bg-opacity-50 ${scrolled&&"bg-manthis-green bg-opacity-100"}`}>
       <div className="container mx-auto lg:relative flex flex-col lg:flex-row lg:justify-between gap-y-4 lg:gap-y-0">
         {/* Logo and Hmaburger Icon */}
         <div className="flex justify-between items-center">
@@ -46,31 +65,31 @@ function NavBar(): React.JSX.Element {
         >
           <a
             href="#"
-            className="text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4"
+            className={`text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4 ${scrolled&&"hover:text-white"}`}
           >
             Home
           </a>
           <a
             href="#about"
-            className="text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4"
+            className={`text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4 ${scrolled&&"hover:text-white"}`}
           >
             About
           </a>
           <a
             href="#services"
-            className="text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4"
+            className={`text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4 ${scrolled&&"hover:text-white"}`}
           >
             Services
           </a>
           <a
             href="#blog"
-            className="text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4"
+            className={`text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4 ${scrolled&&"hover:text-white"}`}
           >
             Blog
           </a>
           <a
             href="#contact"
-            className="text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg-mx-4"
+            className={`text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg-mx-4 ${scrolled&&"hover:text-white"}`}
           >
             Contact Us
           </a>
