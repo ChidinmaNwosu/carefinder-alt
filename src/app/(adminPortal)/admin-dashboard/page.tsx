@@ -20,8 +20,8 @@ function AdminDashboard(): React.JSX.Element {
   }, []);
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center mt-4 bg-manthis-green bg-opacity-30">
-      <div className="caontainer mx-auto p-4 mt-10">
+    <div className="lg:min-h-screen lg:w-full lg:flex lg:flex-col lg:items-center mt-4 bg-manthis-green bg-opacity-30">
+      <div className="caontainer mx-auto p-4 mt-10 ">
         <div className="p-8 bg-white shadow-md rounded-lg">
           <h2 className="font-bold text-4xl mb-4 text-center">Dashboard</h2>
           <p className="font-medium text-xl text-center">
@@ -31,7 +31,7 @@ function AdminDashboard(): React.JSX.Element {
 
         {/* Add your admin dashboard components here */}
         <div
-          className="shadow-2xl bg-bice-blue bg-opacity-10"
+          className="w-full mt-8 p-4 bg-white shadow-2xl rounded-lg"
           id="editor"
         ></div>
       </div>
