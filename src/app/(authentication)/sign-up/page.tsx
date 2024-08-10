@@ -8,6 +8,23 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
+import {db} from '@/app/firebase';
+import{collection, addDoc} from 'firebase/firestore';
+
+async function addDataToFirestore(name:string, email:string, password: string){
+  try{
+    const docRef = await addDoc(collection(db, "Sign-up"),{
+      name: name,
+      email: email,
+      password: password,
+    });
+    console.log(`Document ID: ${docRef.id}`);
+    return true;
+  } catch(error){
+    console.error('Error adding document: ', error);
+    return false;
+  }
+}
 
 function SignUp(): React.JSX.Element {
   const router = useRouter();
@@ -17,6 +34,15 @@ function SignUp(): React.JSX.Element {
   const [error, setError] = useState<string>("");
 
   const handleSignUp = async ():Promise<void> => {
+    const added = await addDataToFirestore(name,email, password);
+    if (added){
+      setName("");
+      setEmail("");
+      setPassword("");
+
+      alert("Data added to firestore successfully");
+    }
+    
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       router.push("/sign-in");

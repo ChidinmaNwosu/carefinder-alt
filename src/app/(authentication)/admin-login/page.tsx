@@ -9,6 +9,8 @@ const Admin = (): React.JSX.Element => {
   const handleClick = (): void => {
     router.push("/admin-dashboard");
   };
+
+  
   return (
     <div className="flex items-center justify-center min-h-screen bg-bice-blue bg-opacity-40">
       <div className="relative lg:w-[65%] flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md-flex-row md:sapce-y-0 md:space:x-4 lg:space-x-8">

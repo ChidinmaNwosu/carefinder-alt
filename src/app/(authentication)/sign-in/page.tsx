@@ -4,8 +4,25 @@ import { FcGoogle } from "react-icons/fc";
 import { useRouter } from 'next/navigation';
 import { signInWithEmailAndPassword,GoogleAuthProvider,signInWithPopup} from 'firebase/auth';
 import {auth} from '@/app/firebase';
+import {db} from '@/app/firebase';
+import{collection, addDoc} from 'firebase/firestore';
+
+async function addDataToFirestore(email:string, password: string){
+  try{
+    const docRef = await addDoc(collection(db, "sign-in"),{
+      email: email,
+      password: password,
+    });
+    console.log(`Document ID: ${docRef.id}`);
+    return true;
+  } catch(error){
+    console.error('Error adding document: ', error);
+    return false;
+  }
+}
 
 function SignIn():React.JSX.Element{
+
   const router = useRouter();
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -24,6 +41,13 @@ function SignIn():React.JSX.Element{
   }
 
   const handleSignIn =async():Promise<void>=>{
+    const added = await addDataToFirestore(email, password);
+    if (added){
+      setEmail("");
+      setPassword("");
+
+      alert("Data added to firestore successfully");
+    }
     try{
       await signInWithEmailAndPassword(auth, email, password);
       router.push('/hospitals');
@@ -60,7 +84,7 @@ function SignIn():React.JSX.Element{
            </div>
            <button onClick={handleSignIn} className="w-full bg-bice-blue text-white p-3 rounded-lg mb-6 hover:bg-white hover:text-bice-blue hover:border hover:border-manthis-green font-semibold">Sign In</button>
            <button onClick={handleGoogleSignIn} className="w-full border border-gray-400 text-bice-blue text-base p-2 rounded-lg mb-6 hover:bg-bice-blue hover:text-white font-semibold"><FcGoogle className=" w-6 h-6 inline mr-2" />Sign In with Google</button>
-           <p className="text-red-700">{error}</p> 
+           {/* <p className="text-red-700">{error}</p>  */}
            <div className="text-center text-bice-blue">
              Don&apos;t have an account? {''}
               <span onClick={()=>router.push('/sign-up')} className="font-bold text-bice-blue cursor-pointer" >

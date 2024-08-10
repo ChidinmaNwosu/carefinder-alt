@@ -22,7 +22,7 @@ const ResetPassword = (): JSX.Element => {
           <span className="mb-1 lg:mb-3 text-2xl md:text-3xl lg:text-4xl font-bold text-bice-blue">
             Reset Your Password
           </span>
-          <span className="font-light text-gray-400 mb-8 text-sm md:text-base lg:text-lg text-manthis-green">
+          <span className="font-light mb-8 text-sm md:text-base lg:text-lg text-manthis-green">
             Enter your email to receive a password reset link.
           </span>
           <input
