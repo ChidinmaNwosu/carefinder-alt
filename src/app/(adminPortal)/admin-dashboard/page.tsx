@@ -1,14 +1,20 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import Editor from "@toast-ui/editor";
+import React, { useEffect, useState, useRef } from "react";
+// import Editor from "@toast-ui/editor";
 import "@toast-ui/editor/dist/toastui-editor.css";
-import {db} from "@/app/firebase";
+import {db} from '@/app/firebase';
 import {collection, addDoc} from "firebase/firestore";
 
 function AdminDashboard(): React.JSX.Element {
-  const editorRef = useRef<Editor | null>(null);
+    const editorRef = useRef<any>(null);
+    const [isClient, setIsClient] = useState(false);
+
   //Initialize the Editor.js instance with the provided element ID
   useEffect(() => {
+    setIsClient(true);
+
+    if (typeof window !== "undefined" && isClient) {
+    import("@toast-ui/editor").then(({ default: Editor }) => {
     const editor = new Editor({
       el: document.querySelector("#editor")!,
       height: "500px",
@@ -18,13 +24,16 @@ function AdminDashboard(): React.JSX.Element {
       initialValue: "content",
       placeholder: "Please Enter Text...",
     });
-    editorRef.current = editor;
+   editorRef.current = editor as any;
     console.log(editor.getMarkdown());
-  }, []);
+  });
+  }
+}, [isClient]);
 
 const handleSave = async () => {
   if (editorRef.current){
-    const content = editorRef.current.getMarkdown();
+    const editor = (editorRef.current as any).editorInstance;
+    const content = editorRef?.current?.getMarkdown();
     try{
       await addDoc(collection(db, "documents"),{
         content,
@@ -60,4 +69,16 @@ const handleSave = async () => {
   );
 }
 
-export default AdminDashboard;
+export default AdminDashboard; 
+
+
+
+
+
+
+
+
+
+
+
+
