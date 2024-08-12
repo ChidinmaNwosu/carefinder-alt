@@ -3,12 +3,13 @@ import Statistics from "@/components/statistics";
 
 function Services(): React.JSX.Element {
   return (
+    <>
+    <Statistics />
     <section className="services-section mb-20" id="services">
-      <Statistics />
       <div className="bg-bice-blue bg-opacity-30 bg-cover bg-no-repeat max-w-[1466px] mx-4 xl:mx-auto rounded-[20px] xl:pt-[70px] px-6 xl:px-0 relative h-[368px] flex items-center xl:items-start -z-10">
         <div className="container mx-auto">
           <div className="flex flex-col items-center xl:flex-row xl:mb-[60px]">
-            <h2 className="text-3xl font-semibold text-white flex-1 mb-4 xl:mb-0 text-center xl:text-left">
+            <h2 className="md:text-3xl font-semibold text-white flex-1 mb-4 xl:mb-0 text-center xl:text-left ">
               Our Best Services For Your Solution
             </h2>
             <p className=" text-base text-white flex-1 text-center xl:text-left max-w-2xl xl:max-w-none">
@@ -87,6 +88,7 @@ function Services(): React.JSX.Element {
         </div>
       </div>
     </section>
+    </>
   );
 }
 export default Services;

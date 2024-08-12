@@ -6,7 +6,7 @@ import {db} from '@/app/firebase';
 import {collection, addDoc} from "firebase/firestore";
 
 function AdminDashboard(): React.JSX.Element {
-    const editorRef = useRef<any>(null);
+    const editorRef = useRef<any | null>(null);
     const [isClient, setIsClient] = useState(false);
 
   //Initialize the Editor.js instance with the provided element ID
