@@ -32,7 +32,7 @@ function NavBar(): React.JSX.Element {
 
 
   return (
-    <section className={`fixed top-0 w-screen py-8 lg:pt-6 lg:pb-6 bg-manthis-green bg-opacity-50 ${scrolled&&"bg-manthis-green bg-opacity-100"}`}>
+    <section className={`fixed top-0 z-30 w-screen py-8 lg:pt-6 lg:pb-6 bg-manthis-green ${scrolled&&"bg-manthis-green bg-opacity-100"}`}>
       <div className="container mx-auto lg:relative flex flex-col lg:flex-row lg:justify-between gap-y-4 lg:gap-y-0">
         {/* Logo and Hmaburger Icon */}
         <div className="flex justify-between items-center">

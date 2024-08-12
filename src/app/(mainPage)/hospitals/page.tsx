@@ -3,27 +3,32 @@ import React, { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 import { Hospital } from "./interface";
+import Loader from "@/components/loader";
 import ExportCSV from "@/components/exportCsv"
 import ShareCSV from "@/components/shareCsv";
 
-
-const Hospitals = () => {
+const Hospitals = ():React.JSX.Element => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [hospitals, setHospitals] = useState<Hospital[]>([]);
   const [pagination, setPagination] = useState<number>(1);
   const hospitalsPerPage: number = 12;
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    setLoading(true);// set loading to true before fetching data
     axios
       .get("/api/hospital")
       .then((response) => {
         setHospitals(response?.data?.hospital);
+        setLoading(false);// set loading to false after fetching data
       })
       .catch((error) => {
         console.error("There was an error fetching the hospital data: " + error);
+        setLoading(false); // set loading to false incase of error
       });
   }, []);
 
+//This allows me implement pagination
   const startIndex = (pagination - 1) * hospitalsPerPage;
   const endIndex = startIndex + hospitalsPerPage;
   const currentHospitals = hospitals
@@ -43,8 +48,18 @@ const Hospitals = () => {
       setPagination(pagination - 1);
     }
   };
+  
+  // The loader spins as the hopital data is being fetched
+  
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <Loader />
+      </div>
+    );
+  }
 
-  return (
+return (
     <div className="p-4 min-h-screen">
       <h1 className="md:text-4xl text-3xl font-bold mb-4 ml-2 text-gray-700">
         Carefinder
@@ -67,7 +82,8 @@ const Hospitals = () => {
           </button>
         </div>
       </form>
-      <div className="lg:grid lg:grid-cols-4 lg:gap-8 mx-4 my-6 space-y-8 lg:space-y-0">
+ 
+     <div className="lg:grid lg:grid-cols-4 lg:gap-8 mx-4 my-6 space-y-8 lg:space-y-0">
         {currentHospitals.map((hospital: Hospital) => (
           <div key={hospital?.id} className="p-4 bg-manthis-green bg-opacity-40 text-white rounded-xl">
             <h2 className="text-2xl font-bold mb-4">{hospital?.name}</h2>
