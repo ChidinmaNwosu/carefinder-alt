@@ -2,6 +2,7 @@
 import React, { useState,useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
+import Image from "next/image";
 
 function NavBar(): React.JSX.Element {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -38,7 +39,7 @@ function NavBar(): React.JSX.Element {
         <div className="flex justify-between items-center">
           <div className="flex justify-center items-center gap-3 lg:justify-normal">
             <a href="#">
-              <img
+              <Image
                 src="/carefinder.jpg"
                 alt="carefinder-logo"
                 className="w-[70px] h-[70px] pl-2"

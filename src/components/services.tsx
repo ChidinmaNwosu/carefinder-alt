@@ -1,5 +1,6 @@
 import React from "react";
 import Statistics from "@/components/statistics";
+import Image from "next/image";
 
 function Services(): React.JSX.Element {
   return (
@@ -9,7 +10,7 @@ function Services(): React.JSX.Element {
       <div className="bg-bice-blue bg-opacity-30 bg-cover bg-no-repeat max-w-[1466px] mx-4 xl:mx-auto rounded-[20px] xl:pt-[70px] px-6 xl:px-0 relative h-[368px] flex items-center xl:items-start -z-10">
         <div className="container mx-auto">
           <div className="flex flex-col items-center xl:flex-row xl:mb-[60px]">
-            <h2 className="md:text-3xl font-semibold text-white flex-1 mb-4 xl:mb-0 text-center xl:text-left ">
+            <h2 className="md:text-3xl font-semibold  text-white flex-1 mb-4 xl:mb-0 text-center xl:text-left ">
               Our Best Services For Your Solution
             </h2>
             <p className=" text-base text-white flex-1 text-center xl:text-left max-w-2xl xl:max-w-none">
@@ -27,7 +28,7 @@ function Services(): React.JSX.Element {
         <div className="grid xl:grid-cols-4 gap-5 px-8 xl:px-0 ">
           <div className="service-item bg-white p-[30px] rounded-[10px] shadow-2xl min-h-[288px] flex flex-col items-center text-center">
             <div className="grid-item-icon mb-[15px]">
-              <img src="/icon-2.png" alt="medical-icon" />
+              <Image src="/icon-2.png" alt="medical-icon" />
             </div>
             <h3 className="text-xl font-semibold mb-[10px]">
               Consultaion and Emergency Checkup
@@ -41,7 +42,7 @@ function Services(): React.JSX.Element {
 
           <div className="service-item bg-white p-[30px] rounded-[10px] shadow-2xl min-h-[288px] flex flex-col items-center text-center">
             <div className="grid-item-icon mb-[15px]">
-              <img
+              <Image
                 src="/pills.png"
                 alt="medical-icon"
                 className="w-[60px] h-[60px] mb-[5px]"
@@ -57,7 +58,7 @@ function Services(): React.JSX.Element {
 
           <div className="service-item bg-white p-[30px] rounded-[10px] shadow-2xl min-h-[288px] flex flex-col items-center text-center">
             <div className="grid-item-icon mb-[15px]">
-              <img
+              <Image 
                 src="/pregnancy.png"
                 alt="medical-icon"
                 className="w-[60px] h-[60px] mb-[5px]"
@@ -76,7 +77,7 @@ function Services(): React.JSX.Element {
 
           <div className="service-item bg-white p-[30px] rounded-[10px] shadow-2xl min-h-[288px] flex flex-col items-center text-center">
             <div className="grid-item-icon mb-[15px]">
-              <img src="/icon-4.png" alt="medical-icon" />
+              <Image src="/icon-4.png" alt="medical-icon" />
             </div>
             <h3 className="text-xl font-semibold mb-[10px]">Cardiology</h3>
             <p className="description font-light leading-normal max-w-[300px]">

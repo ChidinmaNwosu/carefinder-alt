@@ -6,6 +6,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
+import Image from "next/image";
 
 function Footer(): React.JSX.Element {
   return (
@@ -15,7 +16,7 @@ function Footer(): React.JSX.Element {
           <div className="flex-1">
             <div className="flex items-center gap-2">
               <a href="">
-                <img
+                <Image
                   src="/carefinder.jpg"
                   alt="header-logo"
                   className="w-[100px] h-[100px] mb-[30px] "

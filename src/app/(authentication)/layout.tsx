@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function AuthenticationLayout({
   children,
 }: {
@@ -6,7 +7,7 @@ export default function AuthenticationLayout({
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen lg:h-screen">
       <div className="hidden lg:block">
-        <img
+        <Image
           src="/medical.png"
           alt="Sign-in/Sign-up pic"
           className="h-full w-screen"

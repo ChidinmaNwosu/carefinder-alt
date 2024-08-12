@@ -1,5 +1,6 @@
 import React from "react";
 import Newsletter from "@/components/newsletter";
+import Image from "next/image";
 
 function Blog(): React.JSX.Element {
   return (
@@ -14,7 +15,7 @@ function Blog(): React.JSX.Element {
           <div className="max-w-[420px] shadow-2xl rounded-[10px] overflow-hidden cursor-pointer group">
             {/*image*/}
             <div className="relative overflow-hidden">
-              <img
+              <Image
                 className="group-hover:scale-110 transition-all duration-500"
                 src="/gloves.jpg"
                 alt="Glove pic"
@@ -50,7 +51,7 @@ function Blog(): React.JSX.Element {
           <div className="max-w-[420px] shadow-2xl rounded-[10px] overflow-hidden cursor-pointer group">
             {/*image*/}
             <div className="relative overflow-hidden">
-              <img
+              <Image
                 className="group-hover:scale-110 transition-all duration-500"
                 src="/vaccination.jpg"
                 alt="Glove pic"
@@ -87,7 +88,7 @@ function Blog(): React.JSX.Element {
           <div className="max-w-[420px] shadow-2xl rounded-[10px] overflow-hidden cursor-pointer group">
             {/*image*/}
             <div className="relative overflow-hidden">
-              <img
+              <Image
                 className="group-hover:scale-110 transition-all duration-500"
                 src="/heart.jpg"
                 alt="Glove pic"

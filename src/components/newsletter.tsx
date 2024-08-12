@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 function Newsletter(): React.JSX.Element {
   return (
@@ -7,7 +8,7 @@ function Newsletter(): React.JSX.Element {
       id="newsletter"
     >
       <div className="absolute left-0 bottom-0">
-        <img src="/pattern-bg.png" alt="pattern for newsletter" />
+        <Image src="/pattern-bg.png" alt="pattern for newsletter" />
       </div>
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-center lg:gap-x-[58px]">

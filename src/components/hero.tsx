@@ -2,6 +2,7 @@
 import React from "react";
 import { FaHeartbeat } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 function Hero(): React.ReactElement {
   const router = useRouter();
@@ -39,7 +40,7 @@ function Hero(): React.ReactElement {
             </button>
           </div>
           <div className="hero-banner hidden xl:flex max-w-[814px] self-end">
-            <img src="/hero-banner.png" alt="hero-banner" />
+            <Image src="/hero-banner.png" alt="hero-banner" />
           </div>
         </div>
       </div>
