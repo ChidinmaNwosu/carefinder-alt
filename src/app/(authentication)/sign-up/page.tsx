@@ -63,8 +63,8 @@ function SignUp(): React.JSX.Element {
 
   return (
     <div className="flex items-center justify-center min-h-screen  bg-bice-blue bg-opacity-40">
-      <div className="relative lg:w-[70%] flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md-flex-row md:sapce-y-0 md:space:x-4 lg:space-x-8">
-        <div className="flex flex-col justify-center p-10 md:p-8 lg:p-14">
+      <div className="relative xl:w-[70%] flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md-flex-row md:sapce-y-0 md:space:x-4 xl:space-x-8">
+        <div className="flex flex-col justify-center p-10 md:p-8 xl:p-14">
           <span className="mb-1 lg:mb-3 text-2xl md:text-3xl lg:text-4xl font-bold text-bice-blue">
             {" "}
             Are You New Here?

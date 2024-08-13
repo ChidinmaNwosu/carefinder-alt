@@ -46,7 +46,7 @@ function NavBar(): React.JSX.Element {
                 className=" pl-2"
               />
             </a>
-            <p className="text-bice-blue text-2xl font-bold hover:text-manthis-green">
+            <p className="text-bice-blue text-2xl font-bold hover:text-white">
               CareFinder
             </p>
           </div>
