@@ -17,6 +17,8 @@ function Blog(): React.JSX.Element {
             <div className="relative overflow-hidden">
               <Image
                 className="group-hover:scale-110 transition-all duration-500"
+                width={420}
+                height={280}
                 src="/gloves.jpg"
                 alt="Glove pic"
               />
@@ -53,6 +55,8 @@ function Blog(): React.JSX.Element {
             <div className="relative overflow-hidden">
               <Image
                 className="group-hover:scale-110 transition-all duration-500"
+                width={420}
+                height={280}
                 src="/vaccination.jpg"
                 alt="Glove pic"
               />
@@ -90,6 +94,8 @@ function Blog(): React.JSX.Element {
             <div className="relative overflow-hidden">
               <Image
                 className="group-hover:scale-110 transition-all duration-500"
+                width={420}
+                height={280}
                 src="/heart.jpg"
                 alt="Glove pic"
               />

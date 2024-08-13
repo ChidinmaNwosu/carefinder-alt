@@ -19,7 +19,9 @@ function Footer(): React.JSX.Element {
                 <Image
                   src="/carefinder.jpg"
                   alt="header-logo"
-                  className="w-[100px] h-[100px] mb-[30px] "
+                  width={100}
+                  height={100}
+                  className=" mb-[30px] "
                 />
               </a>
               <h2 className="text-2xl font-semibold text-manthis-green">

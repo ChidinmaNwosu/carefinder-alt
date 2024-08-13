@@ -42,7 +42,8 @@ function NavBar(): React.JSX.Element {
               <Image
                 src="/carefinder.jpg"
                 alt="carefinder-logo"
-                className="w-[70px] h-[70px] pl-2"
+                width={70} height={70}
+                className=" pl-2"
               />
             </a>
             <p className="text-bice-blue text-2xl font-bold hover:text-manthis-green">
