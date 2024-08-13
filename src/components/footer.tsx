@@ -17,7 +17,7 @@ function Footer(): React.JSX.Element {
             <div className="flex items-center gap-2">
               <a href="">
                 <Image
-                  src="/carefinder.jpg"
+                  src={"/carefinder.jpg"}
                   alt="header-logo"
                   width={100}
                   height={100}

@@ -5,10 +5,10 @@ export default function AuthenticationLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-2 min-h-screen xl:h-screen">
-      <div className="hidden xl:block">
+    <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen xl:h-screen">
+      <div className="hidden lg:block">
         <Image
-          src="/medical.png"
+          src={"/medical.png"}
           alt="Sign-in/Sign-up pic"
           width={600}
           height={600}

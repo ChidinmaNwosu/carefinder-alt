@@ -4,31 +4,36 @@ import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 import { Hospital } from "./interface";
 import Loader from "@/components/loader";
-import ExportCSV from "@/components/exportCsv"
+import ExportCSV from "@/components/exportCsv";
 import ShareCSV from "@/components/shareCsv";
+import { FaCircleArrowLeft } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
-const Hospitals = ():React.JSX.Element => {
+const Hospitals = (): React.JSX.Element => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [hospitals, setHospitals] = useState<Hospital[]>([]);
   const [pagination, setPagination] = useState<number>(1);
   const hospitalsPerPage: number = 12;
   const [loading, setLoading] = useState<boolean>(true);
+  const router = useRouter();
 
   useEffect(() => {
-    setLoading(true);// set loading to true before fetching data
+    setLoading(true); // set loading to true before fetching data
     axios
       .get("/api/hospital")
       .then((response) => {
         setHospitals(response?.data?.hospital);
-        setLoading(false);// set loading to false after fetching data
+        setLoading(false); // set loading to false after fetching data
       })
       .catch((error) => {
-        console.error("There was an error fetching the hospital data: " + error);
+        console.error(
+          "There was an error fetching the hospital data: " + error
+        );
         setLoading(false); // set loading to false incase of error
       });
   }, []);
 
-//This allows me implement pagination
+  //This allows me implement pagination
   const startIndex = (pagination - 1) * hospitalsPerPage;
   const endIndex = startIndex + hospitalsPerPage;
   const currentHospitals = hospitals
@@ -48,9 +53,9 @@ const Hospitals = ():React.JSX.Element => {
       setPagination(pagination - 1);
     }
   };
-  
+
   // The loader spins as the hopital data is being fetched
-  
+
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
@@ -59,8 +64,16 @@ const Hospitals = ():React.JSX.Element => {
     );
   }
 
-return (
+  return (
     <div className="p-4 min-h-screen">
+      <div className="flex flex-row gap-2 items-center py-6 ">
+        <FaCircleArrowLeft
+          className="text-[40px] text-bice-blue"
+          onClick={() => router.push("/")}
+        />
+        <p>Back to home</p>
+      </div>
+
       <h1 className="md:text-4xl text-3xl font-bold mb-4 ml-2 text-gray-700">
         Carefinder
       </h1>
@@ -82,22 +95,38 @@ return (
           </button>
         </div>
       </form>
- 
-     <div className="lg:grid lg:grid-cols-4 lg:gap-8 mx-4 my-6 space-y-8 lg:space-y-0">
+
+      <div className="lg:grid xl:grid-cols-3 lg:grid-cols-2 xl:gap-8 lg:gap-4 mx-4 my-6 space-y-8 lg:space-y-0">
         {currentHospitals.map((hospital: Hospital) => (
-          <div key={hospital?.id} className="p-4 bg-manthis-green bg-opacity-40 text-white rounded-xl">
+          <div
+            key={hospital?.id}
+            className="p-4 bg-[whitesmoke] shadow-2xl text-[#001f3f] rounded-xl"
+          >
             <h2 className="text-2xl font-bold mb-4">{hospital?.name}</h2>
             <p className="mb-2 text-bice-blue font-bold tracking-tight text-xl">
-              Type: <span className="text-bice-blue font-medium tracking-tight text-xl">{hospital?.type?.name}</span>
+              Type:{" "}
+              <span className="text-[#001f3f] font-medium tracking-tight text-xl">
+                {hospital?.type?.name}
+              </span>
             </p>
             <p className="mb-2 text-bice-blue font-bold tracking-tight text-xl">
-              State: <span className="text-bice-blue font-medium tracking-tight text-xl"> {hospital?.state?.name}</span>
+              State:{" "}
+              <span className="text-[#001f3f] font-medium tracking-tight text-xl">
+                {" "}
+                {hospital?.state?.name}
+              </span>
             </p>
             <p className="mb-2 text-bice-blue font-bold tracking-tight text-xl">
-              Address: <span className="text-bice-blue font-medium tracking-tight text-xl">{hospital?.address}</span>
+              Address:{" "}
+              <span className="text-[#001f3f] font-medium tracking-tight text-xl">
+                {hospital?.address}
+              </span>
             </p>
             <p className="mb-2 text-bice-blue font-bold tracking-tight text-xl ">
-              Phone number: <span className="text-bice-blue font-medium tracking-tight text-xl text-wrap">{hospital?.phone_number}</span>
+              Phone number:{" "}
+              <span className="text-[#001f3f] font-medium tracking-tight text-xl ">
+                {hospital?.phone_number}
+              </span>
             </p>
           </div>
         ))}

@@ -1,10 +1,13 @@
 "use client";
 import { useState } from "react";
 import { resetPassword } from "@/app/firebase";
+import { FaCircleArrowLeft } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 const ResetPassword = (): JSX.Element => {
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
+  const router = useRouter();
 
   const handleResetPassword = async (): Promise<void> => {
     try {
@@ -19,7 +22,14 @@ const ResetPassword = (): JSX.Element => {
     <div className="flex items-center justify-center min-h-screen bg-bice-blue bg-opacity-40">
       <div className="relative lg:w-[70%] flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0 md:space-x-4 lg:space-x-8">
         <div className="flex flex-col justify-center p-10 md:p-8 lg:p-14">
-          <span className="mb-1 lg:mb-3 text-2xl md:text-3xl lg:text-4xl font-bold text-bice-blue">
+          <div className="flex flex-row gap-2 items-center py-4 ">
+            <FaCircleArrowLeft
+              className="text-[40px] text-bice-blue"
+              onClick={() => router.push("/")}
+            />
+            <p className="text-manthis-green">Back to home</p>
+          </div>
+          <span className="mb-1 xl:mb-3 text-2xl lg:text-3xl xl:text-4xl font-bold text-bice-blue">
             Reset Your Password
           </span>
           <span className="font-light mb-8 text-sm md:text-base lg:text-lg text-manthis-green">

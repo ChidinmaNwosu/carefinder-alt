@@ -40,7 +40,7 @@ function Hero(): React.ReactElement {
             </button>
           </div>
           <div className="hero-banner hidden xl:flex max-w-[814px] self-end ">
-            <Image src="/hero-banner.png" alt="hero-banner" width={600} height={500}/>
+            <Image src={"/hero-banner.png"} alt="hero-banner" width={600} height={500}/>
           </div>
         </div>
       </div>

@@ -4,10 +4,13 @@ import React, { useEffect, useState, useRef } from "react";
 import "@toast-ui/editor/dist/toastui-editor.css";
 import {db} from '@/app/firebase';
 import {collection, addDoc} from "firebase/firestore";
+import { FaCircleArrowLeft } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 function AdminDashboard(): React.JSX.Element {
     const editorRef = useRef<any | null>(null);
     const [isClient, setIsClient] = useState(false);
+    const router = useRouter();
 
   //Initialize the Editor.js instance with the provided element ID
   useEffect(() => {
@@ -47,7 +50,11 @@ const handleSave = async () => {
   }
 }
   return (
-    <div className="lg:min-h-screen lg:w-full lg:flex lg:flex-col lg:items-center mt-4 bg-manthis-green bg-opacity-30">
+    <div className="xl:min-h-screen xl:w-full xl:flex xl:flex-col mt-4 bg-manthis-green bg-opacity-30">
+  <div className="flex flex-row gap-2 items-center py-6 px-6"  >
+     <FaCircleArrowLeft className="text-[40px] text-manthis-green" onClick={() => router.push("/")}/>
+     <p>Back to home</p>
+   </div>
       <div className="caontainer mx-auto p-4 mt-10 ">
         <div className="p-8 bg-white shadow-md rounded-lg">
           <h2 className="font-bold text-4xl mb-4 text-center">Dashboard</h2>

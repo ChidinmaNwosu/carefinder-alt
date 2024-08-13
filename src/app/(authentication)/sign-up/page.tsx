@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import {db} from '@/app/firebase';
 import{collection, addDoc} from 'firebase/firestore';
+import { FaCircleArrowLeft } from "react-icons/fa6";
 
 async function addDataToFirestore(name:string, email:string, password: string){
   try{
@@ -65,6 +66,13 @@ function SignUp(): React.JSX.Element {
     <div className="flex items-center justify-center min-h-screen  bg-bice-blue bg-opacity-40">
       <div className="relative xl:w-[70%] flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md-flex-row md:sapce-y-0 md:space:x-4 xl:space-x-8">
         <div className="flex flex-col justify-center p-10 md:p-8 xl:p-14">
+        <div className="flex flex-row gap-2 items-center py-2">
+            <FaCircleArrowLeft
+              className="text-[40px] text-manthis-green"
+              onClick={() => router.push("/")}
+            />
+            <p className="text-bice-blue">Back to home</p>
+          </div>
           <span className="mb-1 lg:mb-3 text-2xl md:text-3xl lg:text-4xl font-bold text-bice-blue">
             {" "}
             Are You New Here?

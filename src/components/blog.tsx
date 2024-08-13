@@ -19,7 +19,7 @@ function Blog(): React.JSX.Element {
                 className="group-hover:scale-110 transition-all duration-500"
                 width={420}
                 height={280}
-                src="/gloves.jpg"
+                src={"/gloves.jpg"}
                 alt="Glove pic"
               />
               {/*badge*/}
@@ -57,7 +57,7 @@ function Blog(): React.JSX.Element {
                 className="group-hover:scale-110 transition-all duration-500"
                 width={420}
                 height={280}
-                src="/vaccination.jpg"
+                src={"/vaccination.jpg"}
                 alt="Glove pic"
               />
               {/*badge*/}
@@ -96,7 +96,7 @@ function Blog(): React.JSX.Element {
                 className="group-hover:scale-110 transition-all duration-500"
                 width={420}
                 height={280}
-                src="/heart.jpg"
+                src={"/heart.jpg"}
                 alt="Glove pic"
               />
               {/*badge*/}

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState,useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter} from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Image from "next/image";
 
@@ -40,7 +40,7 @@ function NavBar(): React.JSX.Element {
           <div className="flex justify-center items-center gap-3 lg:justify-normal">
             <a href="#">
               <Image
-                src="/carefinder.jpg"
+                src={"/carefinder.jpg"}
                 alt="carefinder-logo"
                 width={70} height={70}
                 className=" pl-2"
@@ -67,38 +67,38 @@ function NavBar(): React.JSX.Element {
         >
           <a
             href="#"
-            className={`text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4 ${scrolled&&"hover:text-white"}`}
+            className={`text-bice-blue hover:text-white text-2xl font-semibold mx-2 lg:mx-4 ${scrolled&&"hover:text-white"}`}
           >
             Home
           </a>
           <a
             href="#about"
-            className={`text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4 ${scrolled&&"hover:text-white"}`}
+            className={`text-bice-blue hover:text-white text-2xl font-semibold mx-2 lg:mx-4 ${scrolled&&"hover:text-white"}`}
           >
             About
           </a>
           <a
             href="#services"
-            className={`text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4 ${scrolled&&"hover:text-white"}`}
+            className={`text-bice-blue hover:text-white text-2xl font-semibold mx-2 lg:mx-4 ${scrolled&&"hover:text-white"}`}
           >
             Services
           </a>
           <a
             href="#blog"
-            className={`text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg:mx-4 ${scrolled&&"hover:text-white"}`}
+            className={`text-bice-blue hover:text-white text-2xl font-semibold mx-2 lg:mx-4 ${scrolled&&"hover:text-white"}`}
           >
             Blog
           </a>
           <a
             href="#contact"
-            className={`text-bice-blue hover:text-manthis-green text-2xl font-semibold mx-2 lg-mx-4 ${scrolled&&"hover:text-white"}`}
+            className={`text-bice-blue hover:text-white text-2xl font-semibold mx-2 lg-mx-4 ${scrolled&&"hover:text-white"}`}
           >
             Contact Us
           </a>
           <a href="#" className="mx-2- lg:mx-4">
             <button
               onClick={handleClick}
-              className="p-3 text-bice-blue bg-white bg-opacity-30 hover:text-manthis-green rounded-lg text-2xl font-semibold border-2 border-white "
+              className="p-3 text-bice-blue bg-white bg-opacity-30 hover:text-white rounded-lg text-2xl font-semibold border-2 border-white "
             >
               Admin Portal
             </button>
