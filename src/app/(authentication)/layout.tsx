@@ -10,8 +10,8 @@ export default function AuthenticationLayout({
         <Image
           src={"/medical.png"}
           alt="Sign-in/Sign-up pic"
-          width={600}
-          height={600}
+          width={400}
+          height={500}
           className="h-full w-screen"
         />
       </div>

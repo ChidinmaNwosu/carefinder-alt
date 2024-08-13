@@ -123,12 +123,12 @@ function SignUp(): React.JSX.Element {
             />
           </div>
           <div className="flex flex-col md:flex-row gap-2 justify-between w-full py-4">
-            <div className="mr-24 ">
+            {/* <div className="mr-24 ">
               <input type="checkbox" className="mr-2" name="check" id="check" />
               <span className="text-base text-manthis-green">
                 Remember for 30 days
               </span>
-            </div>
+            </div> */}
             <span className="text-base text-manthis-green cursor-pointer" onClick={()=> router.push('/reset-password')}>
               Forgot Password?
             </span>
