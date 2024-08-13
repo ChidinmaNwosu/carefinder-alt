@@ -96,8 +96,8 @@ return (
             <p className="mb-2 text-bice-blue font-bold tracking-tight text-xl">
               Address: <span className="text-bice-blue font-medium tracking-tight text-xl">{hospital?.address}</span>
             </p>
-            <p className="mb-2 text-bice-blue font-bold tracking-tight text-xl">
-              Phone number: <span className="text-bice-blue font-medium tracking-tight text-xl">{hospital?.phone_number}</span>
+            <p className="mb-2 text-bice-blue font-bold tracking-tight text-xl ">
+              Phone number: <span className="text-bice-blue font-medium tracking-tight text-xl text-wrap">{hospital?.phone_number}</span>
             </p>
           </div>
         ))}

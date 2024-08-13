@@ -10,7 +10,7 @@ const config: Config = {
     screens : {
         sm:"640px",
         md:"768px",
-        lg:"960px",
+        lg:"1220px",
         xl:"1330px",
     },
     extend: {
@@ -23,9 +23,7 @@ const config: Config = {
         "gradient-conic":
         "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      fontFamily: {
-        poppins: ["Poppins","sans-serif"],
-      },
+   
     },
   },
   plugins: [],
