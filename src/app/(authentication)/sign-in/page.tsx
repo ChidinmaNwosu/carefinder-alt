@@ -8,11 +8,12 @@ import {db} from '@/app/firebase';
 import{collection, addDoc} from 'firebase/firestore';
 import { FaCircleArrowLeft } from "react-icons/fa6";
 
+
 async function addDataToFirestore(email:string, password: string){
   try{
     const docRef = await addDoc(collection(db, "sign-in"),{
       email: email,
-      password: password,
+      // password: password,
     });
     console.log(`Document ID: ${docRef.id}`);
     return true;
@@ -45,7 +46,7 @@ function SignIn():React.JSX.Element{
     const added = await addDataToFirestore(email, password);
     if (added){
       setEmail("");
-      setPassword("");
+      // setPassword("");
 
       alert("Data added to firestore successfully");
     }
@@ -62,8 +63,8 @@ function SignIn():React.JSX.Element{
   
   return (
     <div className="flex items-center justify-center min-h-screen bg-bice-blue bg-opacity-40">
-      <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md-flex-row md:sapce-y-0 md:space:x-4 xl:space-x-8">
-        <div className="flex flex-col justify-center p-10 md:p-8 xl:p-14">
+      <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md-flex-row md:space-y-0 md:space:x-4 xl:space-x-8">
+        <div className="flex flex-col justify-center p-10 md:p-8 xl:p-12">
         <div className="flex flex-row gap-2 items-center py-2">
             <FaCircleArrowLeft
               className="text-[40px] text-manthis-green"
@@ -82,12 +83,7 @@ function SignIn():React.JSX.Element{
               <input onChange={(e)=>setPassword(e.target.value)} type="password" className="w-full p-2 border border-manthis-green rounded-md placeholder:font-light placeholder:text-mathis-green" name="password" id="password" value={password} placeholder="JaneDoe123$" />
            </div>
            <div className="flex flex-col md:flex-row gap-2 justify-between w-full py-4">
-               {/* <div className="mr-24 ">
-                  <input type="checkbox" className="mr-2" name="check" id="check"/>
-                  <span className="text-base text-manthis-green">
-                    Remember for 30 days
-                  </span>
-               </div> */}
+            
           <span className="text-base text-manthis-green cursor-pointer" onClick={()=> router.push('/reset-password')}>Forgot Password?</span>
            </div>
            <button onClick={handleSignIn} className="w-full bg-bice-blue text-white p-3 rounded-lg mb-6 hover:bg-white hover:text-bice-blue hover:border hover:border-manthis-green font-semibold">Sign In</button>

@@ -17,7 +17,7 @@ async function addDataToFirestore(name:string, email:string, password: string){
     const docRef = await addDoc(collection(db, "Sign-up"),{
       name: name,
       email: email,
-      password: password,
+      // password: password,
     });
     console.log(`Document ID: ${docRef.id}`);
     return true;
@@ -39,7 +39,7 @@ function SignUp(): React.JSX.Element {
     if (added){
       setName("");
       setEmail("");
-      setPassword("");
+      // setPassword("*");
 
       alert("Data added to firestore successfully");
     }
@@ -63,9 +63,9 @@ function SignUp(): React.JSX.Element {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen  bg-bice-blue bg-opacity-40">
-      <div className="relative xl:w-[70%] flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md-flex-row md:sapce-y-0 md:space:x-4 xl:space-x-8">
-        <div className="flex flex-col justify-center p-10 md:p-8 xl:p-14">
+    <div className="flex items-center justify-center min-h-screen bg-bice-blue bg-opacity-40">
+      <div className="relative xl:w-[60%] flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md-flex-row md:sapce-y-0 md:space:x-4 xl:space-x-8">
+        <div className="flex flex-col justify-center p-10 md:p-8 xl:p-12">
         <div className="flex flex-row gap-2 items-center py-2">
             <FaCircleArrowLeft
               className="text-[40px] text-manthis-green"

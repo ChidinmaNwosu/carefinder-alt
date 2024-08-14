@@ -1,15 +1,51 @@
 "use client";
-import React from "react";
-import { FcGoogle } from "react-icons/fc";
+import React, { useState, useEffect } from "react";
 import { FaCircleArrowLeft } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
+import { auth, db } from "@/app/firebase";
 
 const Admin = (): React.JSX.Element => {
   const router = useRouter();
 
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [authError, setAuthError] = useState<string>("");
+  const [user, loading] = useAuthState(auth);
+
   const handleClick = (): void => {
+    try {
+      signInWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+      setAuthError(`Could not sign in: ${authError}`);
+      console.log(authError);
+    }
     router.push("/admin-dashboard");
   };
+
+  useEffect(() => {
+    if (user) {
+      const checkAdminRole = async () => {
+        try {
+          const userDoc = doc(db, "users", user.uid); // get users by id
+          const docSnap = await getDoc(userDoc); //wait to get each user and the id
+          if (docSnap.exists() && docSnap.data()?.role === "admin") {
+            router.push("/admin-dashboard");
+          } else {
+            auth.signOut();
+            setAuthError("You are not authorized to access this page.");
+            console.log("You are not authorized to access this page.");
+          }
+        } catch (error) {
+          console.error("Error getting document: ", error);
+        }
+      };
+      checkAdminRole();
+    }
+  }, [user, router]);
+
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-bice-blue bg-opacity-40">
@@ -38,6 +74,8 @@ const Admin = (): React.JSX.Element => {
               className="w-full p-2 border border-manthis-green rounded-md placeholder:font-light placeholder:text-mathis-green"
               name="email"
               id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="JaneDoe@email.com"
             />
           </div>
@@ -50,24 +88,20 @@ const Admin = (): React.JSX.Element => {
               className="w-full p-2 border border-manthis-green rounded-md placeholder:font-light placeholder:text-mathis-green"
               name="password"
               id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="JaneDoe123$"
             />
           </div>
-          <div className="flex flex-col md:flex-row gap-2 justify-between w-full py-4">
-            <div className="mr-24 ">
-              <input type="checkbox" className="mr-2" name="check" id="check" />
-              <span className="text-base text-bice-blue">
-                Remember for 30 days
-              </span>
-            </div>
-          </div>
-          <button className="w-full bg-manthis-green text-white p-3 rounded-lg mb-6 hover:bg-white hover:text-manthis-green hover:border hover:border-bice-blue font-semibold">
+          <button
+            className="w-full bg-manthis-green text-white p-3 rounded-lg mb-6 mt-20 hover:bg-white hover:text-manthis-green hover:border hover:border-bice-blue font-semibold"
+            onClick={handleClick}
+          >
             Log In
           </button>
-          <button className="w-full border border-gray-400 text-manthis-green text-base p-2 rounded-lg mb-6 hover:bg-manthis-green hover:text-white font-semibold">
-            <FcGoogle className=" w-6 h-6 inline mr-2" />
-            Login In with Google
-          </button>
+          {loading && <p>Loading...</p>}
+          {authError && <p>Auth Error</p>}
+
           <div className="text-center text-bice-blue">
             Done! Proceed to the {""}
             <span

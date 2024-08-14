@@ -5,7 +5,7 @@ export default function AuthenticationLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen xl:h-screen">
+    <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen xl:h-full">
       <div className="hidden lg:block">
         <Image
           src={"/medical.png"}
