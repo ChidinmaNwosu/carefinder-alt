@@ -8,6 +8,8 @@ import ExportCSV from "@/components/exportCsv";
 import ShareCSV from "@/components/shareCsv";
 import { FaCircleArrowLeft } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
+import { signOut } from "firebase/auth";
+import { auth } from "@/app/firebase";
 
 const Hospitals = (): React.JSX.Element => {
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -16,6 +18,11 @@ const Hospitals = (): React.JSX.Element => {
   const hospitalsPerPage: number = 12;
   const [loading, setLoading] = useState<boolean>(true);
   const router = useRouter();
+
+  const handleSignOut = async (): Promise<void> => {
+    await signOut(auth);
+    router.push("/");
+  };
 
   useEffect(() => {
     setLoading(true); // set loading to true before fetching data
@@ -66,14 +73,25 @@ const Hospitals = (): React.JSX.Element => {
 
   return (
     <div className="p-4 min-h-screen">
-      <div className="flex flex-row gap-2 items-center py-6 ">
-        <FaCircleArrowLeft
-          className="text-[40px] text-bice-blue"
-          onClick={() => router.push("/")}
-        />
-        <p>Back to home</p>
+      <div className="flex items-center justify-between">
+        <div className="flex gap-2 items-center py-6 ">
+          <FaCircleArrowLeft
+            className="text-[40px] text-bice-blue"
+            onClick={() => router.push("/")}
+          />
+          <p>Back to home</p>
+        </div>
+        <div className="">
+          <a href="#" className="mx-2- lg:mx-4">
+            <button
+              onClick={handleSignOut}
+              className="p-3 text-bice-blue bg-white bg-opacity-30 hover:text-white rounded-lg text-2xl font-semibold border-2 border-white "
+            >
+              Sign out
+            </button>
+          </a>
+        </div>
       </div>
-
       <h1 className="md:text-4xl text-3xl font-bold mb-4 ml-2 text-gray-700">
         Carefinder
       </h1>

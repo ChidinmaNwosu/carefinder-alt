@@ -3,6 +3,9 @@ import React, { useState,useEffect } from "react";
 import { useRouter} from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Image from "next/image";
+// import { signOut} from "firebase/auth";
+// import { auth} from "@/app/firebase";
+
 
 function NavBar(): React.JSX.Element {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -13,6 +16,11 @@ function NavBar(): React.JSX.Element {
   };
 
   const [scrolled, setScrolled] = useState(false);
+
+  // const handleSignOut = async (): Promise<void> => {
+  //   await signOut(auth);
+  //   router.push("/");
+  // }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,6 +111,14 @@ function NavBar(): React.JSX.Element {
               Admin Portal
             </button>
           </a>
+          {/* <a href="#" className="mx-2- lg:mx-4">
+            <button
+            onClick={handleSignOut}
+              className="p-3 text-bice-blue bg-white bg-opacity-30 hover:text-white rounded-lg text-2xl font-semibold border-2 border-white "
+            >
+               Sign out
+            </button>
+          </a> */}
         </div>
       </div>
     </section>
