@@ -46,10 +46,9 @@ const Admin = (): React.JSX.Element => {
     }
   }, [user, router]);
 
-
   return (
     <div className="flex items-center justify-center min-h-screen bg-bice-blue bg-opacity-40">
-      <div className="relative xl:w-[65%] flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md-flex-row md:sapce-y-0 md:space:x-4 xl:space-x-8">
+      <div className="relative lg:w-[75%] flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md-flex-row md:space-y-0 md:space:x-4 lg:space-x-8">
         <div className="flex flex-col justify-center p-10 md:p-8 xl:p-14">
           <div className="flex flex-row gap-2 items-center py-2">
             <FaCircleArrowLeft
@@ -94,13 +93,11 @@ const Admin = (): React.JSX.Element => {
             />
           </div>
           <button
-            className="w-full bg-manthis-green text-white p-3 rounded-lg mb-6 mt-20 hover:bg-white hover:text-manthis-green hover:border hover:border-bice-blue font-semibold"
+            className="w-full bg-manthis-green text-white p-3 rounded-lg mb-6 mt-5 hover:bg-white hover:text-manthis-green hover:border hover:border-bice-blue font-semibold"
             onClick={handleClick}
           >
             Log In
           </button>
-          {loading && <p>Loading...</p>}
-          {authError && <p>Auth Error</p>}
 
           <div className="text-center text-bice-blue">
             Done! Proceed to the {""}

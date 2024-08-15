@@ -44,12 +44,12 @@ function SignIn(): React.JSX.Element {
   };
 
   const handleSignIn = async (): Promise<void> => {
-    // const added = await addDataToFirestore(email, password);
-    // if (added) {
-    //   setEmail("");
-    //   setPassword("");
-    //   alert("Data added to firestore successfully");
-    // }
+    const added = await addDataToFirestore(email, password);
+    if (added) {
+      setEmail("");
+      setPassword("");
+      alert("Data added to firestore successfully");
+    }
     try {
       await signInWithEmailAndPassword(auth, email, password);
       router.push("/hospitals");

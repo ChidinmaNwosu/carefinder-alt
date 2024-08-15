@@ -84,8 +84,8 @@ const Hospitals = (): React.JSX.Element => {
         <div className="">
           <a href="#" className="mx-2- lg:mx-4">
             <button
-              onClick={handleSignOut}
-              className="p-3 text-bice-blue bg-white bg-opacity-30 hover:text-white rounded-lg text-2xl font-semibold border-2 border-white "
+               onClick={handleSignOut}
+              className=" p-2 md:p-3 text-bice-blue bg-white bg-opacity-30 hover:text-white rounded-lg lg:text-2xl font-semibold border-2 border-white "
             >
               Sign out
             </button>
