@@ -29,9 +29,9 @@ const Admin = (): React.JSX.Element => {
     if (user) {
       const checkAdminRole = async () => {
         try {
-          const userDoc = doc(db, "users", user.uid); // get users by id
+          const userDoc = doc(db, "users", user?.uid); // get users by id
           const docSnap = await getDoc(userDoc); //wait to get each user and the id
-          if (docSnap.exists() && docSnap.data()?.role === "admin") {
+          if (docSnap?.exists() && docSnap?.data()?.role === "admin") {
             router.push("/admin-dashboard");
           } else {
             auth.signOut();
@@ -98,7 +98,7 @@ const Admin = (): React.JSX.Element => {
           >
             Log In
           </button>
-
+          {authError && <p>{authError}</p>}
           <div className="text-center text-bice-blue">
             Done! Proceed to the {""}
             <span

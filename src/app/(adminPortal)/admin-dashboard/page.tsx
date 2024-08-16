@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState, useRef } from "react";
-// import Editor from "@toast-ui/editor";
 import "@toast-ui/editor/dist/toastui-editor.css";
 import { db } from "@/app/firebase";
 import { collection, addDoc } from "firebase/firestore";
@@ -41,7 +40,7 @@ function AdminDashboard(): React.JSX.Element {
   }, [isClient]);
 
   const handleSave = async () => {
-    if (editorRef.current) {
+    if (editorRef?.current) {
       const editor = (editorRef.current as any).editorInstance;
       const content = editorRef?.current?.getMarkdown();
       try {

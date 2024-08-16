@@ -8,30 +8,16 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "@/app/firebase";
-import { db } from "@/app/firebase";
-import { collection, addDoc } from "firebase/firestore";
 import { FaCircleArrowLeft } from "react-icons/fa6";
 
-async function addDataToFirestore(email: string, password: string) {
-  try {
-    const docRef = await addDoc(collection(db, "sign-in"), {
-      email: email,
-      password: password,
-    });
-    console.log(`Document ID: ${docRef.id}`);
-    return true;
-  } catch (error) {
-    console.error("Error adding document: ", error);
-    return false;
-  }
-}
-
+//Sign-in component
 function SignIn(): React.JSX.Element {
   const router = useRouter();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
 
+  //Instantiate the google sign in
   const handleGoogleSignIn = async (): Promise<void> => {
     try {
       const provider = new GoogleAuthProvider();
@@ -44,12 +30,6 @@ function SignIn(): React.JSX.Element {
   };
 
   const handleSignIn = async (): Promise<void> => {
-    const added = await addDataToFirestore(email, password);
-    if (added) {
-      setEmail("");
-      setPassword("");
-      alert("Data added to firestore successfully");
-    }
     try {
       await signInWithEmailAndPassword(auth, email, password);
       router.push("/hospitals");

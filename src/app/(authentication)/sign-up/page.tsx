@@ -8,25 +8,9 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-import {db} from '@/app/firebase';
-import{collection, addDoc} from 'firebase/firestore';
 import { FaCircleArrowLeft } from "react-icons/fa6";
 
-async function addDataToFirestore(name:string, email:string, password: string){
-  try{
-    const docRef = await addDoc(collection(db, "Sign-up"),{
-      name: name,
-      email: email,
-      // password: password,
-    });
-    console.log(`Document ID: ${docRef.id}`);
-    return true;
-  } catch(error){
-    console.error('Error adding document: ', error);
-    return false;
-  }
-}
-
+//sign-up component
 function SignUp(): React.JSX.Element {
   const router = useRouter();
   const [name, setName] = useState<string>("");
@@ -34,16 +18,8 @@ function SignUp(): React.JSX.Element {
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
 
-  const handleSignUp = async ():Promise<void> => {
-    const added = await addDataToFirestore(name,email, password);
-    if (added){
-      setName("");
-      setEmail("");
-      // setPassword("*");
-
-      alert("Data added to firestore successfully");
-    }
-    
+  //instantiate the sign-up using the sign-up button
+  const handleSignUp = async (): Promise<void> => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
       router.push("/sign-in");
@@ -52,10 +28,11 @@ function SignUp(): React.JSX.Element {
     }
   };
 
-  const handleGoogleSignIn = async ():Promise<void> => {
+  //instantiate the sign-up using the  google sign-up button
+  const handleGoogleSignIn = async (): Promise<void> => {
     try {
       const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth,provider);
+      await signInWithPopup(auth, provider);
       router.push("/sign-in");
     } catch (error) {
       setError(`Could not sign in with Google:${error}`);
@@ -66,7 +43,7 @@ function SignUp(): React.JSX.Element {
     <div className="flex items-center justify-center min-h-screen bg-bice-blue bg-opacity-40">
       <div className="relative lg:w-[75%] flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md-flex-row md:sapce-y-0 md:space:x-4 xl:space-x-8">
         <div className="flex flex-col justify-center p-10 md:p-8 xl:p-12">
-        <div className="flex flex-row gap-2 items-center py-2">
+          <div className="flex flex-row gap-2 items-center py-2">
             <FaCircleArrowLeft
               className="text-[40px] text-manthis-green"
               onClick={() => router.push("/")}
@@ -129,7 +106,10 @@ function SignUp(): React.JSX.Element {
                 Remember for 30 days
               </span>
             </div> */}
-            <span className="text-base text-manthis-green cursor-pointer" onClick={()=> router.push('/reset-password')}>
+            <span
+              className="text-base text-manthis-green cursor-pointer"
+              onClick={() => router.push("/reset-password")}
+            >
               Forgot Password?
             </span>
           </div>

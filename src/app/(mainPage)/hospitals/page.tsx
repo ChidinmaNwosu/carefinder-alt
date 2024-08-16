@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { signOut } from "firebase/auth";
 import { auth } from "@/app/firebase";
 
+//hospital component
 const Hospitals = (): React.JSX.Element => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [hospitals, setHospitals] = useState<Hospital[]>([]);
@@ -19,12 +20,13 @@ const Hospitals = (): React.JSX.Element => {
   const [loading, setLoading] = useState<boolean>(true);
   const router = useRouter();
 
-  const handleSignOut = async (): Promise<void> => {
+//Sign-out after surfing through the hospitals page
+const handleSignOut = async (): Promise<void> => {
     await signOut(auth);
     router.push("/");
-  };
+};
 
-  useEffect(() => {
+useEffect(() => {
     setLoading(true); // set loading to true before fetching data
     axios
       .get("/api/hospital")
@@ -40,7 +42,7 @@ const Hospitals = (): React.JSX.Element => {
       });
   }, []);
 
-  //This allows me implement pagination
+//This allows me implement pagination
   const startIndex = (pagination - 1) * hospitalsPerPage;
   const endIndex = startIndex + hospitalsPerPage;
   const currentHospitals = hospitals
@@ -61,9 +63,8 @@ const Hospitals = (): React.JSX.Element => {
     }
   };
 
-  // The loader spins as the hopital data is being fetched
-
-  if (loading) {
+// The loader spins as the hopital data is being fetched
+if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
         <Loader />
@@ -82,10 +83,10 @@ const Hospitals = (): React.JSX.Element => {
           <p>Back to home</p>
         </div>
         <div className="">
-          <a href="#" className="mx-2- lg:mx-4">
+          <a href="#" className="mx-2 lg:mx-4">
             <button
-               onClick={handleSignOut}
-              className=" p-2 md:p-3 text-bice-blue bg-white bg-opacity-30 hover:text-white rounded-lg lg:text-2xl font-semibold border-2 border-white "
+              onClick={handleSignOut}
+              className=" p-2 md:p-3 text-bice-blue bg-white bg-opacity-30 hover:text-white rounded-lg lg:text-2xl font-semibold border-2 border-bice-blue"
             >
               Sign out
             </button>
@@ -161,7 +162,7 @@ const Hospitals = (): React.JSX.Element => {
           onClick={handleNextPage}
           disabled={endIndex >= hospitals.length}
           className="px-4 py-2 bg-bice-blue lg:text-2xl text-white rounded-full"
-        >
+          >
           Next
         </button>
       </div>

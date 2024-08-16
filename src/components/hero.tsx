@@ -39,8 +39,8 @@ function Hero(): React.ReactElement {
               Get Started
             </button>
           </div>
-          <div className="hero-banner hidden xl:flex max-w-[814px] self-end ">
-            <Image src={"/hero-banner.png"} alt="hero-banner" width={600} height={500}/>
+          <div className="hero-banner hidden xl:flex max-w-[814px] self-end">
+            <Image src={"/hero-banner.png"} alt="hero-banner" width={500} height={500} className="h-auto"/>
           </div>
         </div>
       </div>

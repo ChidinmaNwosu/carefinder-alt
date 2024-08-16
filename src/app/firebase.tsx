@@ -32,6 +32,4 @@ export const resetPassword = async (email: string) => {
   } catch (error) {
     throw error;
   }
-};
-
-// To export the resetPassword function
+};// To export the resetPassword function

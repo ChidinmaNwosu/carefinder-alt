@@ -28,7 +28,7 @@ function Services(): React.JSX.Element {
         <div className="grid xl:grid-cols-4 gap-5 px-8 xl:px-0 ">
           <div className="service-item bg-white p-[30px] rounded-[10px] shadow-2xl min-h-[288px] flex flex-col items-center text-center">
             <div className="grid-item-icon mb-[15px]">
-              <Image src={"/icon-2.png"} alt="medical-icon" width={60} height={60} />
+              <Image src={"/icon-2.png"} alt="medical-icon" width={60} height={60} className="w-auto h-auto" />
             </div>
             <h3 className="text-xl font-semibold mb-[10px]">
               Consultaion and Emergency Checkup
@@ -47,7 +47,7 @@ function Services(): React.JSX.Element {
                 alt="medical-icon"
                 width={60}
                 height={60}
-                className=" mb-[5px]"
+                className=" mb-[5px] w-auto h-auto"
               />
             </div>
             <h3 className="text-xl font-semibold mb-[10px]">Pregnancy care</h3>
@@ -65,7 +65,7 @@ function Services(): React.JSX.Element {
                 alt="medical-icon"
                 width={60}
                 height={60}
-                className=" mb-[5px]"
+                className=" mb-[5px] w-auto h-auto"
               />
             </div>
             <h3 className="text-xl font-semibold mb-[10px]">
@@ -81,7 +81,7 @@ function Services(): React.JSX.Element {
 
           <div className="service-item bg-white p-[30px] rounded-[10px] shadow-2xl min-h-[288px] flex flex-col items-center text-center">
             <div className="grid-item-icon mb-[15px]">
-              <Image src={"/icon-4.png"} alt="medical-icon" width={60} height={60} />
+              <Image src={"/icon-4.png"} alt="medical-icon" width={50} height={60} className="w-auto h-auto" />
             </div>
             <h3 className="text-xl font-semibold mb-[10px]">Cardiology</h3>
             <p className="description font-light leading-normal max-w-[300px]">
