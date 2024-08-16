@@ -68,7 +68,7 @@ function Contact(): React.JSX.Element {
             {/*submit button*/}
             <button
               type="submit"
-              className="border rounded-full bg-manthis-green bg-opacity-55 self-start xl:self-center p-8 text-xl font-semibold text-white mt-10"
+              className="border rounded-full bg-manthis-green bg-opacity-55 self-start xl:self-center  p-2 lg:p-8 lg:text-xl font-semibold text-white mt-10"
             >
               BOOK AN APPOINTMENT
             </button>
