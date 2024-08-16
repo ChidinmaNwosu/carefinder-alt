@@ -20,13 +20,13 @@ const Hospitals = (): React.JSX.Element => {
   const [loading, setLoading] = useState<boolean>(true);
   const router = useRouter();
 
-//Sign-out after surfing through the hospitals page
-const handleSignOut = async (): Promise<void> => {
+  //Sign-out after surfing through the hospitals page
+  const handleSignOut = async (): Promise<void> => {
     await signOut(auth);
     router.push("/");
-};
+  };
 
-useEffect(() => {
+  useEffect(() => {
     setLoading(true); // set loading to true before fetching data
     axios
       .get("/api/hospital")
@@ -42,7 +42,7 @@ useEffect(() => {
       });
   }, []);
 
-//This allows me implement pagination
+  //This allows me implement pagination
   const startIndex = (pagination - 1) * hospitalsPerPage;
   const endIndex = startIndex + hospitalsPerPage;
   const currentHospitals = hospitals
@@ -63,8 +63,8 @@ useEffect(() => {
     }
   };
 
-// The loader spins as the hopital data is being fetched
-if (loading) {
+  // The loader spins as the hopital data is being fetched
+  if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
         <Loader />
@@ -162,7 +162,7 @@ if (loading) {
           onClick={handleNextPage}
           disabled={endIndex >= hospitals.length}
           className="px-4 py-2 bg-bice-blue lg:text-2xl text-white rounded-full"
-          >
+        >
           Next
         </button>
       </div>

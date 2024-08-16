@@ -3,7 +3,6 @@ import { initializeApp } from "firebase/app";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth"; // Remove the import statement for resetPassword
 import { getFirestore } from "firebase/firestore"; // Add this import statement for Firestore
 
-
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,8 +21,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app); // To initialize the auth service
 const db = getFirestore(app); // To initialize Firestore
 
-
-
 export { auth, app, db }; // To export these services
 
 export const resetPassword = async (email: string) => {
@@ -32,4 +29,4 @@ export const resetPassword = async (email: string) => {
   } catch (error) {
     throw error;
   }
-};// To export the resetPassword function
+}; // To export the resetPassword function

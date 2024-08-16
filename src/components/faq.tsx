@@ -7,39 +7,50 @@ function Faq(): React.JSX.Element {
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
 
   const toggleOpen = (index: number) => {
-    setOpenIndexes((prevIndexes) =>
-      prevIndexes.includes(index)
-        ? prevIndexes.filter((i) => i !== index) // Close if it's already open
-        : [...prevIndexes, index] // Open if it's closed
+    setOpenIndexes(
+      (prevIndexes) =>
+        prevIndexes.includes(index)
+          ? prevIndexes.filter((i) => i !== index) // Close if it's already open
+          : [...prevIndexes, index] // Open if it's closed
     );
   };
 
   // An array holding the questions and their respective answers...
   const faqItems = [
     {
-      question: "Why you should believe in Carefinder, to find healthcare centers close to you?",
-      answer: "Carefinder is reliable due to its comprehensive database and user-friendly features, making it easy to find verified healthcare centers near you."
+      question:
+        "Why you should believe in Carefinder, to find healthcare centers close to you?",
+      answer:
+        "Carefinder is reliable due to its comprehensive database and user-friendly features, making it easy to find verified healthcare centers near you.",
     },
     {
       question: "Will we get healthcare updates?",
-      answer: "Yes, Carefinder provides timely updates on healthcare facilities, ensuring you have the most current information available."
+      answer:
+        "Yes, Carefinder provides timely updates on healthcare facilities, ensuring you have the most current information available.",
     },
     {
-      question: "Can I share the list of hospitals closest to me to others? How?",
-      answer: "You can share the list via various platforms like email or social media directly from the Carefinder app."
+      question:
+        "Can I share the list of hospitals closest to me to others? How?",
+      answer:
+        "You can share the list via various platforms like email or social media directly from the Carefinder app.",
     },
     {
-      question: "How long will it take to get locations of healthcare centers closest to me?",
-      answer: "The locations of nearby healthcare centers are provided instantly after your search."
+      question:
+        "How long will it take to get locations of healthcare centers closest to me?",
+      answer:
+        "The locations of nearby healthcare centers are provided instantly after your search.",
     },
     {
-      question: "What preparations are necessary before going to locations provided by Carefinder?",
-      answer: "It is recommended to contact the healthcare center ahead to confirm services and availability before visiting."
+      question:
+        "What preparations are necessary before going to locations provided by Carefinder?",
+      answer:
+        "It is recommended to contact the healthcare center ahead to confirm services and availability before visiting.",
     },
     {
       question: "What are the benefits of Carefinder?",
-      answer: "Carefinder offers quick access to a vast network of verified healthcare facilities, enhancing your ability to find and access medical care efficiently."
-    }
+      answer:
+        "Carefinder offers quick access to a vast network of verified healthcare facilities, enhancing your ability to find and access medical care efficiently.",
+    },
   ];
 
   return (
