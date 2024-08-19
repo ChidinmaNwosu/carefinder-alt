@@ -57,7 +57,7 @@ pnpm run dev
 
 
 
-Some key Features of this application is:
+## Some key Features of this application is:
 1. Hospital Search: Allows users to search for hospitals within their region.
 2. Export Hospitals: Allows users to export the list of hospitals to a CSV file.
 3. Share Hospitals: Allows users to share the list of hospitals with others.
@@ -65,12 +65,26 @@ Some key Features of this application is:
 6. Markdown Support: Allows admin users to write content with markdown.
 
 
-These are the technologies Used
+### These are the technologies Used
 Next.js: React framework for server-side rendering and static site generation.
 React: JavaScript library for building user interfaces.
 TypeScript: Typed superset of JavaScript.
-CSS Modules: Scoped CSS for styling components.
 Tailwind css: for inline styling and responsive styling.
 Vercel: Deployment platform for modern web applications.
 Toast-ui/editor: for markdown support.
 papaparse: for csv export and sharing.
+Count-up: it the numbers on the landing page a count up functionality.
+
+# Project summary.
+The carefinder project begins with a landing page that is divided into different sections, they are: home, about, services, blog, contact and footer. 
+The home section offers a brief intro of the project and it has a button that navigates you to the Sign-up page if you have not signed up and sign-in page if you have signed up.
+The about section breaks down the actions that can be carried out in the application such as search, export, share, markdown support for admin etc
+The services sections shows the services that are availed to you when you sign up for carefinder
+The blog section shows notable articles written by carefinder admin
+The contact section allows you make appoints using carefinder to enjoy their services, it also has possible questions people might have about carefinder in the Faq section with possible answers.
+The footer section has social media links, section breakdown and address and number for carefinder among other things.
+
+Using the navbar on the landing page you can smoothly scroll to any of the above mentioned sections and clicking on the admin portal button allows you navigate to the admin login page, when logged in as a admin, you can use admin features such as the markdown support that allows you make hospital entries, add images, links etc and save them in the firebase firestore using the save button.
+
+After signing up, you are naviagted to the sign in page, when you sign in then you can access the hospital list page, on the hospitals page, there is a back to home button allowing you to navigate back to the landing page and a sign out button that allows you sign out and return to the landing page, underneath it is a heading and a brief intro, then we have the search bar that allows you search for hospitals based on location, by simply typing in your location. Below the search bar there is a display of the hospitals, you can navigate through the hospitals using the pagination button at the bottom, you can export your list of hospitals using the export button and share your export using your share button. 
+This is the carefinder application in a nutshell!
