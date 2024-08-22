@@ -1,5 +1,5 @@
 import React from "react";
-import Statistics from "@/components/statistics";
+import Statistics from "@/components/Statistics/statistics";
 import Image from "next/image";
 
 function Services(): React.JSX.Element {

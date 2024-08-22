@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Papa from "papaparse";
-import { Hospital } from "../app/(mainPage)/hospitals/interface";
+import { Hospital } from "@/app/(mainPage)/hospitals/interface";
 
 interface ShareCSVProps {
   hospitals: Hospital[];

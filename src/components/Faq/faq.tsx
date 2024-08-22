@@ -61,17 +61,19 @@ function Faq(): React.JSX.Element {
         </h2>
         <div className="max-w-5xl mx-auto">
           {faqItems.map((item, index) => (
-            <div
+            <div 
               key={index}
               className="px-[30px] pt-7 pb-4 border-b cursor-pointer select-none"
               onClick={() => toggleOpen(index)}
+              role="button"
+            
             >
               <div className="flex items-center justify-between mb-[10px]">
                 {/* title */}
                 <h4 className="text-xl">{item.question}</h4>
                 {/* icon */}
                 <div className="text-manthis-green text-2xl">
-                  {openIndexes.includes(index) ? <IoMdRemove /> : <IoMdAdd />}
+                  {openIndexes.includes(index) ? <IoMdRemove aria-label ="collapse" /> : <IoMdAdd aria-label ="expand" />}
                 </div>
               </div>
               {/* answer text */}

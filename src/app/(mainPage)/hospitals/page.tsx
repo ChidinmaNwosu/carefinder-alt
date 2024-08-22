@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 import { Hospital } from "./interface";
-import Loader from "@/components/loader";
+import Loader from "@/components/Loader/loader";
 import ExportCSV from "@/components/exportCsv";
 import ShareCSV from "@/components/shareCsv";
 import { FaCircleArrowLeft } from "react-icons/fa6";

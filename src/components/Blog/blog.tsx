@@ -1,5 +1,5 @@
 import React from "react";
-import Newsletter from "@/components/newsletter";
+import Newsletter from "@/components/Newsletter/newsletter";
 import Image from "next/image";
 
 function Blog(): React.JSX.Element {

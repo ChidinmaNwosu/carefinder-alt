@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
+
 function NotFound(): React.JSX.Element {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-white">

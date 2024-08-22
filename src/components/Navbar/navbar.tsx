@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import {useRouter} from "next/router";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Image from "next/image";
 
@@ -53,6 +53,7 @@ function NavBar(): React.JSX.Element {
               CareFinder
             </p>
           </div>
+          
           {/* Hamburger Menu */}
           <button
             aria-label="Toggle-menu"

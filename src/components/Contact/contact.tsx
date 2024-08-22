@@ -1,5 +1,5 @@
 import React from "react";
-import Faq from "@/components/faq";
+import Faq from "@/components/Faq/faq";
 
 function Contact(): React.JSX.Element {
   return (
