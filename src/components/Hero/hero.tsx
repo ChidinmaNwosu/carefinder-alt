@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { FaHeartbeat } from "react-icons/fa";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 function Hero(): React.ReactElement {
