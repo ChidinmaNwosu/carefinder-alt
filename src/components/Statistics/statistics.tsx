@@ -6,7 +6,7 @@ function Statistics(): React.JSX.Element {
   return (
     <section className="services-section mb-10">
       <div className="container mx-auto ">
-        <div className=" flex flex-col xl:flex-row gap-y-6 justify-between">
+        <div className=" flex flex-col lg:flex-row gap-y-6 justify-between">
           <div className="flex-1 flex flex-col items-center">
             <div className="text-4xl xl:text-[64px] font-semibold text-bice-blue text-opacity-50 xl:mb-4 text-">
               <CountUp end={500} duration={2} prefix="+" />

@@ -19,7 +19,7 @@ function About(): React.JSX.Element {
               How it works?
             </h1>
 
-            <div className="about-list mt-14 mb-20 grid gap-y-12 xl:grid-cols-3 gap-x-8">
+            <div className="about-list mt-14 mb-20 grid gap-y-12 lg:grid-cols-3 gap-x-8">
               <div className=" flex flex-col gap-5 border shadow-2xl p-4">
                 <IoIosSettings className="text-bice-blue text-4xl " />
                 <div className="className">

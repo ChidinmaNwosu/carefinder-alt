@@ -12,11 +12,11 @@ function Hero(): React.ReactElement {
   };
 
   return (
-    <section className="py-12 xl:pt-12 xl:pb-0 overflow-hidden mt-24">
+    <section className="py-12 lg:px-10 lg:pt-12 lg:pb-0 overflow-hidden mt-24">
       <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between h-full">
-          <div className="hero-text xl:w-[48%] text-center xl:text-left">
-            <div className="flex items-center bg-white py-[10px] px-[20px] w-max gap-x-2 mb-[26px] rounded-full mx-auto xl:mx-0">
+        <div className="flex flex-col lg:flex-row items-center justify-between h-full">
+          <div className="hero-text lg:w-[48%] text-center lg:text-left">
+            <div className="flex items-center bg-white py-[10px] px-[20px] w-max gap-x-2 mb-[26px] rounded-full mx-auto lg:mx-0">
               <FaHeartbeat className="text-4xl text-manthis-green" />
               <div className="uppercase text-base font-medium text-[#9ab4b7] tracking-[2.24px]">
                 Live your best life
@@ -34,12 +34,12 @@ function Hero(): React.ReactElement {
             </p>
             <button
               onClick={handleClick}
-              className="btn px-8 py-4 text-xl font-semibold text-gray-600 border rounded-full bg-manthis-green bg-opacity-40 mx-auto xl:mx-0"
+              className="btn px-8 py-4 text-xl font-semibold text-gray-600 border rounded-full bg-manthis-green bg-opacity-40 mx-auto lg:mx-0"
             >
               Get Started
             </button>
           </div>
-          <div className="hero-banner hidden xl:flex max-w-[814px] self-end">
+          <div className="hero-banner hidden lg:flex max-w-[814px] self-end">
             <Image src={"/hero-banner.png"} alt="hero-banner" width={500} height={500} className="h-auto"/>
           </div>
         </div>

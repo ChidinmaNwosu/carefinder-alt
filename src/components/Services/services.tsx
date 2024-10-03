@@ -25,8 +25,8 @@ function Services(): React.JSX.Element {
       </div>
 
       <div className="container mx-auto mt-8 xl:-mt-[144px]">
-        <div className="grid xl:grid-cols-4 gap-5 px-8 xl:px-0 ">
-          <div className="service-item bg-white p-[30px] rounded-[10px] shadow-2xl min-h-[288px] flex flex-col items-center text-center">
+        <div className="grid lg:grid-cols-4 gap-5 px-8 lg:px-0 ">
+          <div className="service-item bg-white p-[30px] rounded-[10px] shadow-2xl min-h-[288px] flex flex-col items-center text-center ">
             <div className="grid-item-icon mb-[15px]">
               <Image src={"/icon-2.png"} alt="medical-icon" width={60} height={60} className="w-auto h-auto" />
             </div>

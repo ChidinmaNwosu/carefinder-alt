@@ -54,9 +54,9 @@ function Faq(): React.JSX.Element {
   ];
 
   return (
-    <section className="className mt-20" id="faq">
+    <section className=" mt-20 p-4" id="faq">
       <div className="container mx-auto">
-        <h2 className="text-5xl text-center mb-[50px] font-semibold text-manthis-green">
+        <h2 className=" text-3xl lg:text-5xl text-center mb-[50px] font-semibold text-manthis-green">
           We&apos;ve got answers.
         </h2>
         <div className="max-w-5xl mx-auto">
